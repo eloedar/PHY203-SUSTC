@@ -20,6 +20,7 @@
 \def\D{\mathrm{d}}
 %\def\F{\ensuremath{f(z)}}
 \def\Fex{\ensuremath{u(x,y)+iv(x,y)}}
+\def\de{\ensuremath{\Delta}}
 \newcommand{\partdev}[3][]
 {\ensuremath{\frac{\displaystyle \partial^{#1} #2}{ \displaystyle \partial #3}}}
 \newcommand{\F}[1][z]
@@ -293,6 +294,24 @@ $$
     \right.
     $$
 \end{definition}
+极坐标的柯西黎曼条件：
+\begin{align*}
+    z=re^{i\theta}\Rightarrow \de z = \partdev{z}{r} \de r+ \partdev{z}{\theta} \de \theta =e^{i\theta}\de r + ire^{i\theta}\de \theta
+\end{align*}
+(1) Along $r$ direction $(\Delta \theta=0)$
+\begin{equation*}
+\lim _{\Delta r \rightarrow 0} \frac{\Delta u+\mathrm{i} \Delta v}{\Delta r e^{\mathrm{i} \theta}}=\frac{1}{e^{\mathrm{i} \theta}}\left(\frac{\partial u}{\partial r}+\mathrm{i} \frac{\partial v}{\partial r}\right)
+\end{equation*}
+(2) Along $\theta$ direction $(\Delta r=0)$
+\begin{equation*}
+\lim _{\Delta \theta \rightarrow 0} \frac{\Delta u+\mathrm{i} \Delta v}{r \Delta \theta \mathrm{i} \mathrm{e}^{\mathrm{i} \theta}}=\frac{1}{r \mathrm{i} e^{\mathrm{i} \theta}}\left(\frac{\partial u}{\partial \theta}+\mathrm{i} \frac{\partial v}{\partial \theta}\right)=\frac{1}{e^{\mathrm{i} \theta}}\left(\frac{-\mathrm{i}}{r} \frac{\partial u}{\partial \theta}+\frac{1}{r} \frac{\partial v}{\partial \theta}\right)
+\end{equation*}
+\begin{equation*}
+    \Rightarrow \begin{cases} \displaystyle
+        \partdev{u}{r}=\frac{1}{r} \partdev{v}{\theta}\\
+       \displaystyle \partdev{v}{r}=-\frac{1}{r} \partdev{u}{\theta}
+    \end{cases}
+\end{equation*}
 \begin{corollary}
     $f(z)$可导的充分必要条件：
     \begin{enumerate}
