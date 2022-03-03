@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.9.2)  3 MAR 2022 10:58
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.9.2)  3 MAR 2022 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -567,17 +567,17 @@ File: multi-value.png Graphic file (type bmp)
 <multi-value.png>
 [5
 
-] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] (./Notes.aux)
+] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
 (rerunfilecheck)             Checksum: 2F22261CED688571644828B5605C194D;2429.
  ) 
 Here is how much of TeX's memory you used:
  15308 strings out of 476533
  326685 string characters out of 5818001
- 663835 words of memory out of 5000000
+ 661835 words of memory out of 5000000
  35423 multiletter control sequences out of 15000+600000
  418960 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,20n,97p,434b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 90i,20n,97p,407b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Notes.pdf (19 pages).
+Output written on Notes.pdf (20 pages).

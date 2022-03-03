@@ -206,7 +206,7 @@ $$
     \includegraphics[width=0.9\textwidth]{multi-value.png}
 \end{figure}
 \begin{equation*}
-    \text{定义域$G$}\quad z=x+\mathrm{i} y \quad \xrightarrow{f(z)} \quad \text{值域$W$} \quad w=f(z)=u(x, y)+\mathrm{i} v(x, y)
+    \text{定义域$G$}\quad z=x+i y \quad \xrightarrow{f(z)} \quad \text{值域$W$} \quad w=f(z)=u(x, y)+i v(x, y)
 \end{equation*}
 \begin{example}
     根式函数：$w=\sqrt[n]{z-a}$。令$z-a=re^{i\theta}$
@@ -300,11 +300,11 @@ $$
 \end{align*}
 (1) Along $r$ direction $(\Delta \theta=0)$
 \begin{equation*}
-\lim _{\Delta r \rightarrow 0} \frac{\Delta u+\mathrm{i} \Delta v}{\Delta r e^{\mathrm{i} \theta}}=\frac{1}{e^{\mathrm{i} \theta}}\left(\frac{\partial u}{\partial r}+\mathrm{i} \frac{\partial v}{\partial r}\right)
+\lim _{\Delta r \rightarrow 0} \frac{\Delta u+i \Delta v}{\Delta r e^{i \theta}}=\frac{1}{e^{i \theta}}\left(\frac{\partial u}{\partial r}+i \frac{\partial v}{\partial r}\right)
 \end{equation*}
 (2) Along $\theta$ direction $(\Delta r=0)$
 \begin{equation*}
-\lim _{\Delta \theta \rightarrow 0} \frac{\Delta u+\mathrm{i} \Delta v}{r \Delta \theta \mathrm{i} \mathrm{e}^{\mathrm{i} \theta}}=\frac{1}{r \mathrm{i} e^{\mathrm{i} \theta}}\left(\frac{\partial u}{\partial \theta}+\mathrm{i} \frac{\partial v}{\partial \theta}\right)=\frac{1}{e^{\mathrm{i} \theta}}\left(\frac{-\mathrm{i}}{r} \frac{\partial u}{\partial \theta}+\frac{1}{r} \frac{\partial v}{\partial \theta}\right)
+\lim _{\Delta \theta \rightarrow 0} \frac{\Delta u+i \Delta v}{r \Delta \theta i \mathrm{e}^{i \theta}}=\frac{1}{r i e^{i \theta}}\left(\frac{\partial u}{\partial \theta}+i \frac{\partial v}{\partial \theta}\right)=\frac{1}{e^{i \theta}}\left(\frac{-i}{r} \frac{\partial u}{\partial \theta}+\frac{1}{r} \frac{\partial v}{\partial \theta}\right)
 \end{equation*}
 \begin{equation*}
     \Rightarrow \begin{cases} \displaystyle
@@ -313,9 +313,9 @@ $$
     \end{cases}
 \end{equation*}
 \begin{corollary}
-    $f(z)$可导的充分必要条件：
+    在某一个点，$f(z)$可导的充分必要条件：
     \begin{enumerate}
-        \item 函数的实部和虚部均为二元可微实函数
+        \item 函数的实部和虚部均为二元可微实函数。
         \item 满足柯西黎曼条件。
     \end{enumerate}
 \end{corollary}
@@ -339,6 +339,17 @@ $$
         \lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z} = \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}
     \end{align*}
 \end{proof}
+\begin{corollary}
+    在某一个区域$G$内，$f(z)$解析的充分必要条件：
+    \begin{enumerate}
+        \item 函数的实部和虚部均为二元可微实函数，且其四个偏导$\left(\displaystyle \partdev{u}{x} \; \partdev{v}{x} \; \partdev{u}{y} \; \partdev{v}{y} \right)$连续。
+        \item 满足柯西黎曼条件。
+    \end{enumerate}
+\end{corollary}
+\textcolor{red}{注意：多值函数一定不可导，不解析。}
+\begin{example}
+    $e^z$在$z\to\infty$时一定不解析，因为其在$z\to\infty$时是多值的。同理，三角函数和双曲函数在$z\to\infty$时也是不可导的。
+\end{example}
 \section{解析函数的特性}
 假设某个复变解析函数：$f(z)=u(x,y)+iv(x,y)\quad u,v\in \mathbb{R}$。由柯西-黎曼条件得到：
 \begin{lemma}
@@ -351,17 +362,45 @@ $$
             \frac{\displaystyle \partial^2 v(x,y)}{ \displaystyle \partial^2 x}+\frac{\displaystyle \partial^2 v(x,y)}{\displaystyle \partial^2 y}=0
         \end{equation}
 \end{lemma}
-\ref{laplace}和\ref{laplace2} 是拉普拉斯方程。所以解析函数的实部和虚部均为调和函数。
+\ref{laplace}和\ref{laplace2} 是拉普拉斯方程。所以解析函数的实部和虚部均为调和函数。即：
+\begin{equation*}
+    \begin{aligned}
+    &\Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=0 \\
+    &\Delta v=\nabla^{2} v=\frac{\partial^{2} v}{\partial x^{2}}+\frac{\partial^{2} v}{\partial y^{2}}=0
+    \end{aligned}
+    \end{equation*}
 \begin{theorem}
     $$\frac{\displaystyle \partial f(z)}{ \displaystyle \partial z^*}=0$$
     即解析函数与其自变量的共轭无关。
-\end{theorem}\newpage
+\end{theorem}
 \begin{proof}
     $$x=\frac{z+z^*}{2},\quad y=\frac{z-z^*}{2}$$
     \begin{align*}
     \frac{\displaystyle \partial f(z)}{ \displaystyle \partial z^*}=\frac{\displaystyle \partial f(z)}{ \displaystyle \partial x}\frac{\displaystyle \partial x}{ \displaystyle \partial z^*}+\frac{\displaystyle \partial f(z)}{ \displaystyle \partial y}\frac{\displaystyle \partial y}{ \displaystyle \partial z^*}=\\
     \frac{1}{2}\left[\frac{\displaystyle \partial u}{ \displaystyle \partial x}-\frac{\displaystyle \partial v}{ \displaystyle \partial y}\right]+\frac{i}{2}\left[ \frac{\displaystyle \partial u}{ \displaystyle \partial y}+\frac{\displaystyle \partial v}{ \displaystyle \partial x} \right]=0
     \end{align*}
+\end{proof}
+\begin{theorem}
+    解析函数的实部和虚部的等值线的切向量相互垂直。
+\end{theorem}
+\begin{proof}
+    \begin{equation*}
+        u(x, y)=C \Rightarrow \D u(x, y)=\frac{\partial u}{\partial x} \D x+\frac{\partial u}{\partial y} \D y=0
+    \end{equation*}
+    $\D \vec{s}$是实部等值线的切向量，则
+    \begin{equation*}
+        \D \vec{s}=(\D x, \D y) \propto\left(\frac{\partial u}{\partial y},-\frac{\partial u}{\partial x}\right)
+    \end{equation*}
+    \begin{equation*}
+        v(x, y)=C^{\prime} \Rightarrow \D v(x,y)=\partdev{v}{x} \D x + \partdev{v}{y}\D y =0
+    \end{equation*}
+    $\D \vec{s'}$是虚部等值线的切向量，则
+    \begin{equation*}
+        \D \vec{s'} =\left(\D x^{\prime}, \D y^{\prime}\right) \propto\left(\frac{\partial v}{\partial y},-\frac{\partial v}{\partial x}\right)
+    \end{equation*}
+    \begin{equation*}
+        \D \vec{s} \cdot \D \vec{s'} \propto\left(\frac{\partial u}{\partial y},-\frac{\partial u}{\partial x}\right) \cdot\left(\frac{\partial v}{\partial y},-\frac{\partial v}{\partial x}\right)=0 \Rightarrow \D \vec{s} \perp \D \vec{s'}
+    \end{equation*}
 \end{proof}
 \section{由部分确定整个解析函数}
 如果已知某个解析函数的实部$u(x,y)$以及在某点$z_0$的取值，可以确定整个解析函数：
