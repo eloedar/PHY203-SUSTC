@@ -161,6 +161,102 @@ $$
     \end{align*}
 \end{proof}
 
+\chapter{Complex Series}
+对于某一复数序列$u_n=x_n+iy_n$，其和前$n$项和$S_n$：
+\begin{equation*}
+    \begin{aligned}
+    &\sum_{n=0}^{\infty}\left(x_{n}+i y_{n}\right) \\
+    &S_{n}=X_{n}+i Y_{n} \\
+    &X_{n}=\sum_{i=0}^{n} x_{i}, Y_{n}=\sum_{j=0}^{n} y_{j}
+    \end{aligned}
+\end{equation*}
+无穷级数收敛的充要条件：
+$\forall\; \varepsilon > 0,\;\; \exists\; n>0;\;\; n \in \mathbb{Z}， \; s.t.\;\; \forall \; p>0\:$
+\begin{equation*}
+    \left|u_{n+1}+u_{n+2}+\ldots+u_{n+p}\right|<\varepsilon
+\end{equation*}
+级数收敛的必要条件：
+\begin{equation*}
+    \text{\boldmath Preliminary Test: } \lim_{n\to \infty} u_n = 0
+\end{equation*}
+\section{级数收敛性判别法}
+\textbf{Test for alternating series}: An alternating series converges if the absolute value of the terms decreases steadily to zero, that is, if $\color{red} \left|a_{n+1}\right| \leq\left|a_{n}\right|$ and $\color{blue} \lim _{n \rightarrow \infty} a_{n}=0$.
+\textbf{\color{red} 一致递减 \color{blue}至0}
+
+\textbf{Comparison Method: }If $\exists N \in \mathbb{N}, \forall n>N$, the condition $\left|u_{n}\right|<v_{n}$ is satisfied. If $\displaystyle \sum_{n=0}^{\infty} v_{n}$ are convergent, then $\displaystyle \sum_{n=0}^{\infty}\left|u_{n}\right|$ are convergent.
+
+\textbf{Ratio Method: }If there exists a constant $\rho$ ({\color{red} un-correlated with $n$ }), and $\left|u_{n+1} / u_{n}\right|<\rho<1$, then $\displaystyle \sum_{n=0}^{\infty} u_{n}$ are absolutely convergent.
+
+\textbf{d'Alembert Method(Criterion): }级数的通项比值$\left(\displaystyle \frac{u_{n+1}}{u_n}\right)$的上极限小于$1$，则原级数绝对收敛；级数的通项比值的下极限大于1，则原级数发散。
+
+\textbf{Gauss Method: }Assume that the ratio between two neighboring terms has the following form: $\displaystyle \frac{u_{n}}{u_{n+1}}=1+\frac{\mu}{n}+O\left(n^{-\lambda}\right)$
+where $\mu=a+i b, \lambda>1$. 
+
+If $a>1$, $\displaystyle \sum_{n=0}^{\infty} u_{n}$ absolutely convergent. 
+
+If $\displaystyle a \leq 1, \sum_{n=0}^{\infty}\left|u_{n}\right|$ divergent.
+
+\begin{example}
+    使用 {\rm Gauss Method} 判别 级数$\displaystyle S_n=\sum_{n=0}^\infty \frac{1}{n}$的收敛性：
+    \begin{align*}
+        \frac{u_n}{u_{n+1}}=\frac{n+1}{n}=1+\frac{1}{n}
+    \end{align*}
+    则$a=1$，原级数发散。
+    \newline
+    使用 {\rm Gauss Method} 判别 级数$\displaystyle S_n=\sum_{n=0}^\infty \frac{1}{n^2}$的收敛性：
+    \begin{align*}
+        \frac{u_n}{u_{n+1}}=\left(\frac{n+1}{n}\right)^2=1+\frac{1}{n^2}+\frac{2}{n}
+    \end{align*}
+    则$a=2$，原级数绝对收敛。
+\end{example}
+
+\textbf{Cauchy Method: }$\displaystyle |u_n|^{1/n}$的上极限小于$1$，原级数绝对收敛；大于$1$，原级数发散。
+
+\section{复数序列的一致收敛}
+
+如果$S_n$一致收敛，则：
+\begin{itemize}
+    \item Continuity $u_{k}(z)$ is continuous in $G$, and $\sum_{k=1}^{\infty} u_{k}(z)$ is uniformly convergent, then $S(z)=\sum_{k=1}^{\infty} u_{k}(z)$ is continuous in $G$
+    \item $\displaystyle
+    \int_{C} \sum_{k=1}^{\infty} u_{k}(z) d z=\sum_{k=1}^{\infty} \int_{C} u_{k}(z) d z
+    $
+    \item $\displaystyle
+        f(z)=\sum_{k=1}^{\infty} u_{k}(z) \text { is analytic in } G \to
+        f^{(p)}(z)=\sum_{k=1}^{\infty} u_{k}^{(p)}(z)
+        $
+\end{itemize}
+
+\section{幂级数}
+
+对于幂级数
+\begin{equation*}
+    \sum_{n=0}^{\infty} c_{n}(z-a)^{n}=c_{0}+c_{1}(z-a)+c_{2}(z-a)^{2}+\ldots
+\end{equation*} 有
+\begin{theorem}\rm
+    \textbf{Abel theorem}: If the series $\displaystyle \sum_{n=0}^{\infty} c_{n}(z-a)^{n}$ are convergent at $z=z_{0}$, then
+the series are absolutely convergent in a disk region (with a radius of $\left|z_{0}-a\right|$ ) surrounding $z_{0}$, and are uniformly convergent in the region $|z-a| \leq r\left(r<\left|z_{0}-a\right|\right)$.
+\end{theorem}
+\begin{corollary}\rm
+    If $\displaystyle \sum_{n=0}^{\infty} c_{n}(z-a)^{n}$ are divergent at $z_{1}$, then also divergent in $|z-a|>\left|z_{1}-a\right|$.
+\end{corollary}
+
+\begin{figure}[h]
+    \includegraphics[width=0.9\textwidth]{./assets/converge_radius.png}
+\end{figure}
+\section{幂级数阿贝尔定理收敛半径的计算}
+\begin{method}
+    {\rm \textbf{Cauchy-Hadamard Formula: }}
+    \begin{equation*}
+        R=\frac{1}{\overline{\lim }_{n \rightarrow \infty}\left|c_{n}\right|^{1 / n}}=\underline{\lim }_{n \rightarrow \infty}\left|\frac{1}{c_{n}}\right|^{1 / n}
+    \end{equation*}
+\end{method}
+\begin{method}
+    {\rm \textbf{d'Alembert Critrion: }}
+    \begin{equation*}
+        R=\lim _{n \rightarrow \infty}\left|\frac{c_{n}}{c_{n+1}}\right|
+    \end{equation*}
+\end{method}
+
 \chapter{Complex Functions}
 \section{复变函数的概念}
 \begin{definition}
@@ -203,7 +299,7 @@ $$
 \section{单值性与黎曼面}
 注意函数的多值性：
 \begin{figure}[h]
-    \includegraphics[width=0.9\textwidth]{multi-value.png}
+    \includegraphics[width=0.9\textwidth]{./assets/multi-value.png}
 \end{figure}
 \begin{equation*}
     \text{定义域$G$}\quad z=x+i y \quad \xrightarrow{f(z)} \quad \text{值域$W$} \quad w=f(z)=u(x, y)+i v(x, y)
@@ -428,7 +524,10 @@ $$h'(y)=\partdev{u(x,y)}{x}+\int \partdev[2]{u(x,y)}{y^2}\D x\to h(y)=\int h'(y)
     对比系数可得：
     $$f(z)=2h(z)+2iC$$
 \end{method}
+
+
 \section{解析函数的积分特性}
+
 \begin{definition}
     复变函数的积分定义为：
     $$\int_L f(z) \D z \equiv \lim_{n\to\infty}\sum_{j=1}^n f(\xi_j)(z_j-z_{j-1})$$

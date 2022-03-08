@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.9.2)  3 MAR 2022 12:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.9.2)  8 MAR 2022 18:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -550,34 +550,42 @@ File: uesint.fd
  [1
 
 ]
+LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10> not available
+(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 41.
+ [2]
 第一章
 [1
 
-]
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 120.
- [2] [3] [4]
+] [2] [3] [4]
 第二章
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+[5
 
-Overfull \hbox (23.86569pt too wide) detected at line 195
+] [6]
+File: ./assets/converge_radius.png Graphic file (type bmp)
+<./assets/converge_radius.png>
+ [7]
+第三章
+
+Overfull \hbox (23.86569pt too wide) detected at line 291
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 z \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 i\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 n^^Y\OT1/cmr/m/n/10 )  [](\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 z \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 i\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 n^^Y\OT1/cmr/m/n/10 )  [](\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 z \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 in^^Y\OT1/cmr/m/n/10 ) \OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 Z
  []
 
-File: multi-value.png Graphic file (type bmp)
-<multi-value.png>
-[5
+File: ./assets/multi-value.png Graphic file (type bmp)
+<./assets/multi-value.png>
+[8
 
-] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] (./Notes.aux)
+] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] (./Notes.aux)
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: 2F22261CED688571644828B5605C194D;2429.
+(rerunfilecheck)             Checksum: 9654284719C460F5EE40B1DB715C7134;3046.
  ) 
 Here is how much of TeX's memory you used:
- 15308 strings out of 476533
- 326685 string characters out of 5818001
- 661835 words of memory out of 5000000
- 35423 multiletter control sequences out of 15000+600000
+ 15329 strings out of 476533
+ 327764 string characters out of 5818001
+ 662521 words of memory out of 5000000
+ 35442 multiletter control sequences out of 15000+600000
  418960 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,20n,97p,407b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 90i,20n,97p,407b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Notes.pdf (20 pages).
+Output written on Notes.pdf (24 pages).
