@@ -161,6 +161,22 @@ $$
     \end{align*}
 \end{proof}
 
+\section{复数域上的指数函数的反函数}
+对于$\forall \; z\in \mathbb{C}$, 如何定义函数$g=f(z)=e^{z}$ 的反函数？
+即定义一个函数，使得：
+\begin{equation*}
+    f^{-1}(g)=z
+\end{equation*}
+这个函数称为复对数函数，区别于$\mathbb{R}$上的指数函数$\ln(x)$。
+\begin{definition}
+    复对数函数：$$\mathrm{Ln}\;z=\ln |z| + i\mathrm{arg} \;z +2n\pi i$$
+    $$s.t. \mathrm{Ln}\;g  = \mathrm{Ln}\; |z|e^{i\mathrm{arg}\;z+2ni\pi} $$
+\end{definition}
+其多值性来源于
+$$
+g=e^z=e^{z+2ni\pi}
+$$
+
 \chapter{Complex Series}
 对于某一复数序列$u_n=x_n+iy_n$，其和前$n$项和$S_n$：
 \begin{equation*}
