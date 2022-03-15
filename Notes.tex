@@ -42,7 +42,7 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\chapter{Complex Numbers}
+\chapter{复数}
 \textbf{约定}：
 我们认为$z\in \mathbb{C}$，$x,y \in \mathbb{R}$
 \section{定义以及运算}
@@ -177,7 +177,7 @@ $$
 g=e^z=e^{z+2ni\pi}
 $$
 
-\chapter{Complex Series}
+\chapter{复变序列}
 对于某一复数序列$u_n=x_n+iy_n$，其和前$n$项和$S_n$：
 \begin{equation*}
     \begin{aligned}
@@ -242,7 +242,7 @@ If $\displaystyle a \leq 1, \sum_{n=0}^{\infty}\left|u_{n}\right|$ divergent.
         $
 \end{itemize}
 
-\section{幂级数}
+\section{幂级数与阿贝尔定理}
 
 对于幂级数
 \begin{equation*}
@@ -259,7 +259,6 @@ the series are absolutely convergent in a disk region (with a radius of $\left|z
 \begin{figure}[h]
     \includegraphics[width=0.9\textwidth]{./assets/converge_radius.png}
 \end{figure}
-\section{幂级数阿贝尔定理收敛半径的计算}
 \begin{method}
     {\rm \textbf{Cauchy-Hadamard Formula: }}
     \begin{equation*}
@@ -273,7 +272,7 @@ the series are absolutely convergent in a disk region (with a radius of $\left|z
     \end{equation*}
 \end{method}
 
-\chapter{Complex Functions}
+\chapter{复变函数}
 \section{复变函数的概念}
 \begin{definition}
     复变函数是复数区域到复数区域的映射。
@@ -371,6 +370,15 @@ $$
     $$z^\prime=z\cdot e^{2\pi i}\to w^\prime=\sqrt{z}\cdot e^{ \pi i} = - \sqrt{z} \ne w$$
     所以$z_1 = 0,\;z_2=\infty$是$w$的两个支点。
 \end{example}
+
+\begin{method}
+    多值函数的单值化:
+\begin{itemize}
+    \item 限定辐角的范围，例如$(0,2\pi]$
+    \item 规定某点$z_0$的值，然后描绘途径该点到目标点$z$的不同路径下的$f(z)$的取值。
+\end{itemize}
+\end{method}
+
 \section{导数及解析函数的定义}
 \begin{definition}
     $f(z)$在$z_0$以及其邻域上有定义，且沿任何路径$z\to z_0$
@@ -462,6 +470,8 @@ $$
 \begin{example}
     $e^z$在$z\to\infty$时一定不解析，因为其在$z\to\infty$时是多值的。同理，三角函数和双曲函数在$z\to\infty$时也是不可导的。
 \end{example}
+
+
 \section{解析函数的特性}
 假设某个复变解析函数：$f(z)=u(x,y)+iv(x,y)\quad u,v\in \mathbb{R}$。由柯西-黎曼条件得到：
 \begin{lemma}
@@ -541,6 +551,7 @@ $$h'(y)=\partdev{u(x,y)}{x}+\int \partdev[2]{u(x,y)}{y^2}\D x\to h(y)=\int h'(y)
     $$f(z)=2h(z)+2iC$$
 \end{method}
 
+\chapter{ 复变函数的积分}
 
 \section{解析函数的积分特性}
 
@@ -553,6 +564,11 @@ $$h'(y)=\partdev{u(x,y)}{x}+\int \partdev[2]{u(x,y)}{y^2}\D x\to h(y)=\int h'(y)
 $$\int_L f_1(z)+f_2(z)\D z=\int_L f_1(z)\D z+\int_L f_2(z)\D z$$
 $$\int_L f(z)\D z = -\int_{-L} f(z)\D z$$
 $$\int_{L_1+L_2} f(z)\D z = \int_{L_1} f(z)\D z+\int_{L_2} f(z)\D z$$
+$$\int_{C} a f(z) d z=a \int_{C} f(z) d z \quad \text{where $a$ is a constant complex number}$$ 
+\begin{equation*}
+\left|\int_{C} f(z) d z\right| \leq \int_{C}|f(z)||d z|
+\end{equation*}
+$$\left|\int_{C} f(z) d z\right| \leq M l \quad \text{where $M$ is upper bound of $f(z)$}$$
 \begin{theorem}
     单连通域上解析函数的柯西积分定理：假设$C$是某个单连通域的边界。
     $$\ointctrclockwise_C \F \D z = 0$$
@@ -581,6 +597,23 @@ $$\ref{int2}\equiv 0$$
     假设$C$是一个复连通域的边界，而填上这个复连通域中的$C_1,C_2,\dots,C_N$所围成的区域可以将该域变为单连通域。那么：
     $$ \ointctrclockwise_C \F \D z= \sum_{n=1}^N \ointctrclockwise_{C_n} \F \D z$$
 \end{theorem}
+\begin{example}
+Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, $C$ is a simply closed curve in $\mathbb{C}$.
+\begin{itemize} \rm
+\item  If $n$ is non-negative, $z^{n}$ is analytic, then $\displaystyle \oint_{C} z^{n} d z=0$.
+\item  If $n$ is negative, and if the contour does not enclose $z=0$, then $z^{n}$ is analytic inside the region bounded by $C$, and again we have $\displaystyle \oint_{C} z^{n} d z=0$.
+\item  If $n$ is negative, and if the contour encloses $z=0$. We can draw a simple circle around $z=0$, and apply the Cauchy theorem for a multi-connected 
+\end{itemize}
+\begin{equation*}
+\oint_{C} z^{n} d z=\oint_{|z|=\varepsilon} z^{n} d z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{\mathrm{i}(n+1) \theta} \mathrm{i} d \theta=\left\{\begin{array}{l}
+2 \pi \mathrm{i}, n=-1 ; \\
+0, n=-2,-3,-4, \ldots
+\end{array}\right.
+\end{equation*}
+\end{example}
+\begin{corollary}
+    函数$f(z)$在$\Sigma_G$内解析，如果$\Sigma_C\subset \Sigma_G$，其线积分$\displaystyle \int_C f(z)\D z$ 与路径无关。
+\end{corollary}
 \section{柯西积分公式}
 \begin{theorem}
     柯西积分公式：假设$C$包围了$\F$的单连通解析区域，$z_0$为区域内一点，则
