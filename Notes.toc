@@ -18,8 +18,8 @@
 \contentsline {chapter}{\numberline {第四章\hspace {.3em}} 复变函数的积分}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}解析函数的积分特性}{15}{section.4.1}%
 \contentsline {section}{\numberline {4.2}柯西积分公式}{17}{section.4.2}%
-\contentsline {section}{\numberline {4.3}最大模定理}{18}{section.4.3}%
-\contentsline {section}{\numberline {4.4}复变函数在其解析圆域上的泰勒级数展开}{18}{section.4.4}%
-\contentsline {section}{\numberline {4.5}利用泰勒级数讨论最大模定理}{19}{section.4.5}%
-\contentsline {section}{\numberline {4.6}解析函数的零点及其孤立性}{20}{section.4.6}%
-\contentsline {section}{\numberline {4.7}解析环域上的洛朗级数展开}{21}{section.4.7}%
+\contentsline {section}{\numberline {4.3}最大模定理}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}复变函数在其解析圆域上的泰勒级数展开}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}利用泰勒级数讨论最大模定理}{20}{section.4.5}%
+\contentsline {section}{\numberline {4.6}解析函数的零点及其孤立性}{21}{section.4.6}%
+\contentsline {section}{\numberline {4.7}解析环域上的洛朗级数展开}{22}{section.4.7}%

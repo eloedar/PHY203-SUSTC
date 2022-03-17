@@ -1,5 +1,5 @@
 \documentclass[10pt, a4paper, oneside]{ctexbook}
-\usepackage{amsmath, amsthm, amssymb, bm, graphicx, mathrsfs,esint}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, mathrsfs,esint,wrapfig}
 \usepackage{hyperref}
 \hypersetup{hypertex=true,
             colorlinks=true,
@@ -606,8 +606,8 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
 \item  If $n$ is negative, and if the contour encloses $z=0$. We can draw a simple circle around $z=0$, and apply the Cauchy theorem for a multi-connected 
 \end{itemize}
 \begin{equation*}
-\oint_{C} z^{n} d z=\oint_{|z|=\varepsilon} z^{n} d z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{\mathrm{i}(n+1) \theta} \mathrm{i} d \theta=\left\{\begin{array}{l}
-2 \pi \mathrm{i}, n=-1 ; \\
+\oint_{C} z^{n} d z=\oint_{|z|=\varepsilon} z^{n} d z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{i(n+1) \theta} i d \theta=\left\{\begin{array}{l}
+2 \pi i, n=-1 ; \\
 0, n=-2,-3,-4, \ldots
 \end{array}\right.
 \end{equation*}
@@ -615,8 +615,27 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
 \begin{corollary}
     函数$f(z)$在$\Sigma_G$内解析，如果$\Sigma_C\subset \Sigma_G$，其线积分$\displaystyle \int_C f(z)\D z$ 与路径无关。
 \end{corollary}
+
+\newpage
+
+\begin{lemma}
+    {\rm 小圆弧引理} Small Arc Lemma：
+
+    {\rm If $f(z)$ is continuous in a small region around $z=a$, and satisfies the following relation: when $\theta_{1} \leq \arg (z-a) \leq \theta_{2},|z-a| \rightarrow 0,(z-a) f(z)$ uniformly approaches $k$. Then we have}
+    $$\lim _{\delta \rightarrow 0} \int_{C_{\delta}} f(z) d z=i k\left(\theta_{2}-\theta_{1}\right)$$
+\end{lemma}
+
+\begin{lemma}
+    {\rm 大圆弧引理} Great Arc Lemma：
+
+    {\rm If $f(z)$ is continuous in a region around $z=\infty$, and satisfies the following relation: when $\theta_{1} \leq \arg (z) \leq \theta_{2}, z \rightarrow \infty, z f(z)$ uniformly approaches $K$. Then we have}
+    \begin{equation*}
+    \lim _{R \rightarrow \infty} \int_{C_{R}} f(z) d z=i K\left(\theta_{2}-\theta_{1}\right)
+    \end{equation*}
+\end{lemma}
 \section{柯西积分公式}
 \begin{theorem}
+    \label{cauchyinteequ}
     柯西积分公式：假设$C$包围了$\F$的单连通解析区域，$z_0$为区域内一点，则
     $$\F[z_0]=\frac{1}{2\pi i}\ointctrclockwise_C \frac{\F}{z-z_0}\D z$$
 \end{theorem}
@@ -634,7 +653,29 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     \label{prof}
     \ointctrclockwise_C \frac{\F}{z-z_0}\D z=2\pi i \F[z_0]
     \end{equation}
+    \ref{prof} 同样可以使用小圆弧定理导出：
+
+    As $z\to z_0$, $(z-z_0)\cdot f(z)/(z-z_0)\to f(z_0)$. And when $r \to 0$,
+    \begin{equation*}
+         \ointctrclockwise_{C_r} \frac{f(z)}{z-z_0}\D z = 2i\pi \footnote{为什么不是$2ni\pi$?因为该函数被单值化了} f(z_0)
+    \end{equation*}
+    
 \end{proof}
+\begin{theorem}
+    \label{cauchyieub}
+    {\rm Cauchy Integration Equation for Unbounded Region:}
+
+    {\rm If $f(z)$ is a single-valued analytic function defined along and beyond a simply closed curve $C$ (including the infinity), then we have the following relation 
+    $$\frac{1}{2 \pi i}\left[\oint_{C_{R}} \frac{f(z)}{z-a} d z+\oint_{C} \frac{f(z)}{z-a} d z\right]=f(a)
+    $$
+    where the integration is done along the positive direction of $C$ (which is clockwise) and the positive direction of $C_{R}$ (anti-clockwise).}
+\end{theorem}
+ 由\ref{cauchyieub}，使用大圆弧引理：
+ \begin{align*}
+     \text{当$K=0$，即$\lim_{z\to \infty} f(z) =0$}:
+     f(a)=\frac{1}{2\pi i}\ointctrclockwise_C \frac{f(z)}{z-a}\D z
+ \end{align*}
+ \text{退化到了\ref{cauchyinteequ}}
 \begin{lemma}
     令\ref{prof}中的$\F=1$，推出公式：
     \begin{align*}
@@ -646,7 +687,7 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     \end{align*}
 \end{lemma}
 可以利用\ref{prof}计算解析函数的导数：
-\begin{method}
+\begin{lemma}
     \label{method283}
     $$
     \F = \frac{1}{2\pi i}\ointctrclockwise_C \frac{\F[\xi]}{\xi-z}\D \xi \to
@@ -662,7 +703,12 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     f^{(n)}(z)=\frac{n!}{2\pi i}\ointctrclockwise_C \frac{\F[\xi]}{(\xi-z)^{n+1}}\D \xi
     $$
     这说明解析函数是任意阶可导的。
-\end{method}
+\end{lemma}
+\begin{theorem}
+    \rm
+    Morera's theorem (莫列拉定理): If $f(z)$ is continuous in $\bar{G}$, if for any closed curve (contour) in $\displaystyle \bar{G}, \oint_{C} f(z) d z=0$, then $f(z)$ is analytic in $G$.
+\end{theorem}
+
 \section{最大模定理}
 \begin{theorem}
     最大模定理：设$\F$在闭区域上解析，则其模$|\F|$的最大值只能出现在该区域的边界上，除非$\F$是一个常函数。
