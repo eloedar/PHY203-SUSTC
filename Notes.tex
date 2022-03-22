@@ -593,8 +593,7 @@ $$\ointctrclockwise_C \left[P\D x+ Q\D y\right] = \iint_\Sigma \left[-\partdev{P
 $$\ref{int2}\equiv 0$$
 \end{proof}
 \begin{theorem}
-    \rm
-    Morera's theorem (莫列拉定理): If $f(z)$ is continuous in $\bar{G}$, if for any closed curve (contour) in $\displaystyle \bar{G}, \oint_{C} f(z) d z=0$, then $f(z)$ is analytic in $G$.
+    Morera's theorem ({莫列拉定理}): If $f(z)$ is continuous in $\bar{G}$, if for any closed curve (contour) in $\displaystyle \bar{G}, \oint_{C} f(z) d z=0$, then $f(z)$ is analytic in $G$.
 \end{theorem}
 \begin{theorem}
     \label{cit2}
@@ -708,6 +707,26 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     $$
     这说明解析函数是任意阶可导的。
 \end{lemma}
+\begin{definition}
+    柯西型积分 Cauchy-type Integral:
+    \rm
+
+    If $\phi(\zeta)$ is a continuous function defined along curve $C$ (piece-wisely smooth) , the 
+    $$f(z)=\frac{1}{2 \pi \mathrm{i}} \int_{C} \frac{\phi(\zeta)}{\zeta-z} \D \zeta, \quad z \notin C $$ 
+    is an analytic function defined outside $C$. And we have 
+    $$f^{(p)}(z)=\frac{p !}{2 \pi \mathrm{i}} \int_{C} \frac{\phi(\zeta)}{(\zeta-z)^{p+1}} \D \zeta, \quad z \notin C$$
+\end{definition}
+\begin{method}
+    Integral that Contains a Parameter
+    \begin{enumerate}
+        \rm
+        \item $f(t, z)$ is a continuous function of $t$ and $z, t \in[a, b], z \in \bar{G}, \bar{G}$ is bounded
+        \item  For any value $t \in[a, b], f(t, z)$ is a single-valued analytic function defined in $\bar{G}$.
+        Then $\displaystyle F(z)=\int_{a}^{b} f(t, z) \D t$ is analytic in $G$, and
+        $$F^{\prime}(z)=\int_{a}^{b} \frac{\partial f(t, z)}{\partial z} \D t, z \in G$$
+    \end{enumerate}
+\end{method}
+
 
 
 \section{最大模定理}
@@ -729,6 +748,7 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     即
     $f(z),\;z\in \overline{\Sigma_C}$的最大值便是$f(\xi),\;\xi\in C$的最大值。
 \end{proof}
+\chapter{复变函数的级数}
 \section{复变函数在其解析圆域上的泰勒级数展开}
     $\F$在$z_0$为圆心的圆域内解析，则对于任意一圆域内点$z$，有
     \begin{align*}
@@ -741,9 +761,14 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
         &=\frac{1}{2\pi i}\ointctrclockwise_C \frac{\F[\xi]}{\xi-z_0}\frac{1}{1-\frac{z-z_0}{\xi-z_0}}\D \xi
     \end{align*}
     由于
-    $$
-    \frac{z-z_0}{\xi-z_0}\le 1,\quad\frac{1}{1-t}=\sum_{n=0}^\infty t^n,\;\; |t|<1
-    $$
+    
+  
+  \begin{equation}
+        \label{spanseries}
+        \color{red}
+        \frac{z-z_0}{\xi-z_0}\le 1,\quad\frac{1}{1-t}=\sum_{n=0}^\infty t^n,\;\; |t|<1
+  \end{equation}
+    
     \begin{align*}
     &\frac{1}{2\pi i}\ointctrclockwise_C \frac{\F[\xi]}{\xi-z_0}\frac{1}{1-\frac{z-z_0}{\xi-z_0}}\D \xi=\frac{1}{2\pi i}\ointctrclockwise_C \frac{\F[\xi]}{\xi-z_0}\sum_{n=0}^\infty \left[\frac{z-z_0}{\xi-z_0}\right]^n\D \xi=\\
     &\sum_{n=0}^\infty \left[\frac{1}{2\pi i}\ointctrclockwise_C \frac{\F[\xi]}{(\xi-z_0)^{n+1}}\D \xi\right](z-z_0)^n=\F
@@ -753,6 +778,17 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
 $$
 R=\lim_{n\to \infty}\frac{1}{\sqrt[n]{|a_n|}}=\lim_{n\to \infty} \left| \frac{a_n}{a_{n+1}} \right| \;\; or \;\; R=|z_0-z_1| \;\; \text{$z_1$是离$z_0$最近的奇点}
 $$
+\begin{example}
+    计算$f(z)=\frac{1}{1-z^2}$的泰勒展开，求出收敛半径。
+    \begin{align*}
+        \rm
+        \text{By equation \ref{spanseries},}\\
+        \frac{1}{1-z^2}=\left. \sum_{n=0}^\infty t^n \right|_{t=z^2}=\sum_{n=0}^\infty z^{2n}
+    \end{align*}
+\end{example}
+\begin{lemma}
+    对于给定的$f(z)$、$z_0$，其泰勒展开(系数)唯一。
+\end{lemma}
 \section{利用泰勒级数讨论最大模定理}
 \begin{definition}
     Kronecker-$\delta$符号：
