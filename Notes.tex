@@ -917,4 +917,92 @@ $$
 或者可以认为
 $$R_1 := \text{以$z_0$为圆心的包含考察点$z$的最大解析环域的内径}$$
 $$R_2 := \text{以$z_0$为圆心的包含考察点$z$的最大解析环域的外径}$$
+\begin{example}
+    Find the Laurent expansion of $\frac{1}{z(z-1)}$ when (i) $0<|z|<1$ and (ii) $|z|>1$ You should refer to the previous exercises. convergent in $0<|z|<1$
+    \begin{enumerate}
+        \item $$0<|z|<1: \quad \frac{1}{z(z-1)}=-\frac{1}{z} \frac{1}{1-z}=-\frac{1}{z} \sum_{n=0}^{\infty} z^{n}=-\sum_{n=-1}^{\infty} z^{n}$$ And we can confirm that $\frac{1}{z(z-1)}$ has singular point at $z=0$.
+        \item $$|z|>1:\quad \frac{1}{z(z-1)}=\frac{1}{z^{2}} \frac{1}{1-\frac{1}{z}}=\frac{1}{z^{2}} \sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{n}=\sum_{n=-2}^{\infty} z^{n}$$ And we can confirm that $\frac{1}{z(z-1)}$ has singular point along $|z|=1$.
+    \end{enumerate}
+\end{example}
+\chapter{留数定理、无穷积分}
+\section{留数定理}
+\begin{definition}
+    孤立奇点：若$f(z)$在$z_0$处不解析，但在其邻域内全都可导($\exists \; r > 0\; s.t.\; \forall \;z:\; 0<|z-z_0|<r,\; f'(z_0) exists.$),那么$z_0$是$f(z)$的一个孤立奇点。
+    若$z_0$是一个孤立奇点，那么我们可以在其邻环域内对$f(z)$做洛朗展开，若：
+    \begin{enumerate}
+        \item 若其洛朗级数展开不包含负数项，$z_0$称为一个可去奇点(removable singular point)
+        \item 若其洛朗级数展开包含有限个负数项，$z_0$称为一个极点(pole)
+        \item 若
+        \begin{equation*}
+            \begin{aligned}
+            f(z) &=a_{-m}(z-b)^{-m}+a_{-m+1}(z-b)^{-m+1}+\ldots+a_{0}+a_{1}(z-b)+\ldots \\
+            &=(z-b)^{-m}\left[a_{-m}+a_{-m+1}(z-b)+\ldots\right] \\
+            &=(z-b)^{-m} \phi(z), \quad 0<|z-b|<R \\
+            \end{aligned}
+        \end{equation*}
+        $\phi(z)$ is analytic for a region around $z=b$. If $\phi(b)=a_{-m} \neq 0$, then $b$ is said to be the $m$-th order pole of $f(z)$.
+        $$
+        \frac{1}{f(z)}=(z-b)^{m} \frac{1}{\phi(z)}
+        $$
+        \item 若其洛朗级数展开包含无限个负数项，$z_0$称为一个本性奇点(essential singular point)
+    \end{enumerate}
+\end{definition}
+如果$z_0$是$f$的一个本质奇点，那么$\lim_{z\to z_0}f(z)$不存在。
+\begin{example}判断$z_0=0$是$f(z)=e^{1/z}$的何种奇点。
+    \begin{equation*}
+        e^{1/z}= \sum_{n=0}^\infty \frac{1}{n!} \left( \frac{1}{z} \right)^n=\sum_{n=0}^{-\infty} \frac{1}{(-n)!} z^n
+    \end{equation*}
+    则，$z_0=0$是其本质奇点，且不难验证，其趋于本质奇点的极限不存在。
+\end{example}
+\begin{theorem}
+    Assume that $G$ is a bounded region, and its boundary $C$ is a smooth, simply closed curve. If except for a finite number of isolated singular points $b_{k}, k=1,2,3 \ldots, n, f(z)$ is single-valued and analytic in $G$, and is continuous in $\bar{G}$ (including along $C$ ). Then we have the following relation:
+    \begin{align*}
+        &\oint_{C} f(z) d z=2 \pi \mathrm{i} \sum_{k=1}^{n} \operatorname{res} f\left(b_{k}\right) \\
+        & \operatorname{res} f\left(b_{k}\right) \text { called the residue (留 数) of } f(z) \text { at } b_{k} \\
+        & f(z)=\sum_{l=-\infty}^{\infty} a_{l}^{(k)}\left(z-b_{k}\right)^{l}, 0<\left|z-b_{k}\right|<r,\;\; \operatorname{res} f(b_k) := a_{-1}^{(k)}
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    \begin{equation*}
+        \oint_{C} f(z) d z=\sum_{k=1}^{n} \oint_{\gamma_{k}} f(z) d z
+    \end{equation*}
+    Recalling that resault of
+    \begin{equation*}
+        \oint_{C} z^{n} d z=\oint_{|z|=\varepsilon} z^{n} d z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{i(n+1) \theta} i d \theta=\left\{\begin{array}{l}
+        2 \pi i, n=-1 ; \\
+        0, n=-2,-3,-4, \ldots
+    \end{array}\right.
+\end{equation*}
+    we concluded before, and we can say that:
+    \begin{equation*}
+       O.E. =  2 \pi \mathrm{i} \sum_{k=1}^{n} a_{-1}^{(k)}=2 \pi \mathrm{i} \sum_{k=1}^{n} \operatorname{res} f\left(b_{k}\right)
+    \end{equation*}
+\end{proof}
+\begin{method}
+    Computation Method of Residue:
+    \begin{equation*}
+        a_{-1}=\left.\frac{1}{(m-1) !} \frac{d^{m-1}}{d z^{m-1}}(z-b)^{m} f(z)\right|_{z=b}
+    \end{equation*}
+    The general form of $f(z)$ is $\frac{P(z)}{Q(z)}$. If $P(z)$ and $Q(z)$ are analytic around $b$, and $P(b) \neq 0, z=b$ is the first-order zero point of $Q(z)$.
+    $$
+    a_{-1}=\lim _{z \rightarrow b}(z-b) f(z)=\lim _{z \rightarrow b}(z-b) \frac{P(z)}{Q(z)}=\frac{P(b)}{Q^{\prime}(b)}
+    $$
+    $$
+f(z)=\frac{1}{(z-1)^{2}(z-2)(z-3)}=\frac{A}{(z-1)^{2}}+\frac{B}{z-1}+\frac{C}{z-2}+\frac{D}{z-3}
+$$
+You can perform decomposition of partial fraction to figure out values for $A-D$.
+Let's try a different approach.
+$$
+(z-1) f(z)=\frac{1}{(z-1)(z-2)(z-3)}=\frac{A}{z-1}+B+\frac{C(z-1)}{z-2}+\frac{D(z-1)}{z-3}
+$$
+Then 
+$$
+\begin{aligned}
+&A=\left.\operatorname{res}(z-1) f(z)\right|_{z=1}=\frac{1}{2}\\
+&B=\left.\operatorname{res} f(z)\right|_{z=1}=\frac{3}{4} \\
+&C=\left.\operatorname{res} f(z)\right|_{z=2}=-1 \\
+&D=\left.\operatorname{res} f(z)\right|_{z=3}=\frac{1}{4}
+\end{aligned}
+$$
+\end{method}
 \end{document}
