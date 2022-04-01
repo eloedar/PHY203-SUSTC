@@ -983,6 +983,9 @@ $$R_2 := \text{以$z_0$为圆心的包含考察点$z$的最大解析环域的外
     \begin{equation*}
         a_{-1}=\left.\frac{1}{(m-1) !} \frac{d^{m-1}}{d z^{m-1}}(z-b)^{m} f(z)\right|_{z=b}
     \end{equation*}
+    \begin{equation*}
+        a_{-1} =\frac{1}{(m-1)!}\lim_{z \to a} [(z-a)^mf(z)]^{m-1}
+    \end{equation*}
     The general form of $f(z)$ is $\frac{P(z)}{Q(z)}$. If $P(z)$ and $Q(z)$ are analytic around $b$, and $P(b) \neq 0, z=b$ is the first-order zero point of $Q(z)$.
     $$
     a_{-1}=\lim _{z \rightarrow b}(z-b) f(z)=\lim _{z \rightarrow b}(z-b) \frac{P(z)}{Q(z)}=\frac{P(b)}{Q^{\prime}(b)}
@@ -1005,4 +1008,89 @@ $$
 \end{aligned}
 $$
 \end{method}
+\begin{example}
+    如果$\infty$ 不是一个$f(z)$的非孤立奇点，那么我们可以定义$f$在$\infty$处的留数：
+    \begin{equation*}
+        \operatorname{res} f(\infty)=\frac{1}{2 \pi \mathrm{i}} \ointclockwise{C} f(z) d z \quad \text{\small 顺时针积分可以包含$\infty$}
+    \end{equation*}
+    \begin{align*}
+        \operatorname{res} f(\infty)&=\frac{1}{2 \pi \mathrm{i}} \ointclockwise{C} f(z) d z=-\frac{1}{2 \pi \mathrm{i}} \ointctrclockwise_{C} \frac{f(1 / t)}{t^{2}} d t\\
+        &=-\frac{f(1 / t)}{t^{2}} \quad \text{\small coefficient of term $t^{-1}$ around 0 }
+        \\&=-f(1 / t) \quad \text{\small coefficient of term $t^{1}$ around 0 }
+        \\&=-f(z) \quad \text{\small coefficient of term $z^{-1}$ around $\infty$ Note $z^{-1}$ is analytic at $\infty$}
+    \end{align*}
+    也就是说，$f$有可能在$\infty$处不解析的同时，在$\infty$处有非零留数。
+
+    同样，$\infty$可能是$f$的一个孤立奇点，但是留数为0.
+\end{example}
+\section{留数定理的应用}
+\begin{method}
+    使用留数定理计算积分
+    $$
+    \int_{0}^{2\pi} R(\sin \theta,\cos \theta) \D \theta \Leftrightarrow I=\oint_{|z|=1} R\left(\frac{z^{2}-1}{2 \mathrm{i} z}, \frac{z^{2}+1}{2 z}\right) \frac{\D z}{\mathrm{i} z}
+    $$
+\end{method}
+\begin{example}
+    Compute$$I=\int_{0}^{\pi} \frac{1}{1+\varepsilon \cos \theta} \D \theta,|\varepsilon|<1 $$
+    \begin{align*}
+        I&=\frac{1}{2} \int_{-\pi}^{\pi} \frac{1}{1+\varepsilon \cos \theta} \D \theta=\frac{1}{2} \oint_{|z|=1} \frac{1}{1+\varepsilon \frac{z^{2}+1}{2 z}} \frac{\D z}{\mathrm{i} z} \\
+        &=\frac{1}{2} \oint_{|z|=1} \frac{2}{\varepsilon z^{2}+2 z+\varepsilon} \frac{\D z}{\mathrm{i}}=\pi \sum_{|z|<1} \mathrm{res} \frac{2}{\varepsilon z^{2}+2 z+\varepsilon} \\
+        &=\left.\pi \frac{2}{2 \varepsilon z+2}\right|_{z=\left(-1+\sqrt{1-\varepsilon^{2}}\right) / \varepsilon}=\frac{\pi}{\sqrt{1-\varepsilon^{2}}}
+    \end{align*}
+\end{example}
+\begin{definition}
+    当我们在计算形如$$I=\int_{-\infty}^\infty f(x) \D x$$的广义积分时，如果发现最终结果发散，我们常常可以定义一个主值积分：
+    $$I=\lim_{R_1,R_2\to \infty} \int_{-R_1}^{R_2} f(x) \D x$$,其主值积分定义为：
+    $$v.p. \;\; I = \lim_{R\to \infty} \int_{-R}^R f(x) \D x$$
+\end{definition}
+\begin{example}
+    Compute $$\int_0^\infty \frac{\D x}{1+x^4}$$
+    \begin{align*}
+    \oint_{C} \frac{1}{1+z^{4}} d z&=\int_{0}^{R} \frac{1}{1+x^{4}} d x+\int_{C_{R}} \frac{1}{1+z^{4}} d z+\int_{R}^{0} \frac{\mathrm{i} d y}{1+(\mathrm{i} y)^{4}}\\
+    &=(1-\mathrm{i}) \int_{0}^{R} \frac{d x}{1+x^{4}}+{\color{red} \int_{c_{R}} \frac{d z}{1+z^{4}}}\\
+    &=\left.2 \pi \operatorname{ires} \frac{1}{1+z^{4}}\right|_{z=e^{\mathrm{i} \pi / 4}}=\frac{\pi}{2} \frac{1-\mathrm{i}}{\sqrt{2}}
+    \end{align*}
+    The {\color{red}red integral} is calculated by Large Arc Lemma:
+    Let $R \rightarrow \infty$
+    $$
+    \lim _{R \rightarrow \infty} \frac{z}{1+z^{4}}=0
+    $$
+    Thus,
+    $$
+    O.E.= \frac{\sqrt{2}}{4}\pi
+    $$
+\end{example}
+\begin{method}
+    计算
+    $$
+    I=\int_{-\infty}^{\infty} f(x) \cos p x d x, I=\int_{-\infty}^{\infty} f(x) \sin p x d x
+    $$
+    我们使用：
+    $$
+    \oint_{C} f(z) e^{\mathrm{i} p z} d z=\int_{-R}^{R} f(x)(\cos p x+\mathrm{i} \sin p x) d x+\int_{C_{R}} f(z) e^{\mathrm{i} p z} d z
+    $$
+\end{method}
+\begin{lemma}
+    Jordan's Lemma:\rm
+    Assume that in $0 \leq \arg z \leq \pi$, when $|z| \rightarrow \infty, Q(z)$ uniformly converges to 0 . then
+    $$
+    \lim _{R \rightarrow \infty} \int_{C_{R}} Q(z) e^{\mathrm{i} p z} d z=0
+    $$
+    where $p>0, C_{R}$ is an arc centered at origin, in the upper half space.
+\end{lemma}
+\begin{example}
+    \text {Compute } $$\int_{0}^{\infty} \frac{x \sin x}{x^{2}+a^{2}} d x, a>0 $$
+    We choose one integral path:
+    $$(0,0)\to(R,0)\to(0,R)\to(-R,0)$$ and let $R\to \infty$
+    \begin{align*}
+        \begin{aligned}
+        \oint_{C} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}} d z&=\int_{-R}^{R} \frac{x e^{\mathrm{i} x}}{x^{2}+a^{2}} d x+{\color{red} \int_{C_{R}} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}} d z }\\
+        &=\left.2 \pi \mathrm{i} \operatorname{res} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}}\right|_{z=a \mathrm{i}}\\
+        &=\pi \mathrm{i} e^{-a}
+        \end{aligned}
+    \end{align*}
+    And the {\color{red}red integral} is calculated by Jordan lemma:
+    $$\lim_{R\to \infty} \frac{z}{z^2+a^2} = 0$$
+    Thus, $$O.E.=\frac{\pi}{2}e^{-a}$$
+\end{example}
 \end{document}
