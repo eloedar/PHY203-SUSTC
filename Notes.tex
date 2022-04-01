@@ -1,5 +1,5 @@
 \documentclass[10pt, a4paper, oneside]{ctexbook}
-\usepackage{amsmath, amsthm, amssymb, bm, graphicx, mathrsfs,esint,wrapfig}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, mathrsfs,esint,wrapfig,color,xcolor}
 \usepackage{hyperref}
 \hypersetup{hypertex=true,
             colorlinks=true,
@@ -234,7 +234,7 @@ If $\displaystyle a \leq 1, \sum_{n=0}^{\infty}\left|u_{n}\right|$ divergent.
 \begin{itemize}
     \item Continuity $u_{k}(z)$ is continuous in $G$, and $\sum_{k=1}^{\infty} u_{k}(z)$ is uniformly convergent, then $S(z)=\sum_{k=1}^{\infty} u_{k}(z)$ is continuous in $G$
     \item $\displaystyle
-    \int_{C} \sum_{k=1}^{\infty} u_{k}(z) d z=\sum_{k=1}^{\infty} \int_{C} u_{k}(z) d z
+    \int_{C} \sum_{k=1}^{\infty} u_{k}(z) \D z=\sum_{k=1}^{\infty} \int_{C} u_{k}(z) \D z
     $
     \item $\displaystyle
         f(z)=\sum_{k=1}^{\infty} u_{k}(z) \text { is analytic in } G \to
@@ -565,11 +565,11 @@ $$h'(y)=\partdev{u(x,y)}{x}+\int \partdev[2]{u(x,y)}{y^2}\D x\to h(y)=\int h'(y)
 $$\int_L f_1(z)+f_2(z)\D z=\int_L f_1(z)\D z+\int_L f_2(z)\D z$$
 $$\int_L f(z)\D z = -\int_{-L} f(z)\D z$$
 $$\int_{L_1+L_2} f(z)\D z = \int_{L_1} f(z)\D z+\int_{L_2} f(z)\D z$$
-$$\int_{C} a f(z) d z=a \int_{C} f(z) d z \quad \text{where $a$ is a constant complex number}$$ 
+$$\int_{C} a f(z) \D z=a \int_{C} f(z) \D z \quad \text{where $a$ is a constant complex number}$$ 
 \begin{equation*}
-\left|\int_{C} f(z) d z\right| \leq \int_{C}|f(z)||d z|
+\left|\int_{C} f(z) \D z\right| \leq \int_{C}|f(z)||d z|
 \end{equation*}
-$$\left|\int_{C} f(z) d z\right| \leq M l \quad \text{where $M$ is upper bound of $f(z)$}$$
+$$\left|\int_{C} f(z) \D z\right| \leq M l \quad \text{where $M$ is upper bound of $f(z)$}$$
 \begin{theorem}
     单连通域上解析函数的柯西积分定理：假设$C$是某个单连通域的边界。
     $$\ointctrclockwise_C \F \D z = 0$$
@@ -593,7 +593,7 @@ $$\ointctrclockwise_C \left[P\D x+ Q\D y\right] = \iint_\Sigma \left[-\partdev{P
 $$\ref{int2}\equiv 0$$
 \end{proof}
 \begin{theorem}
-    Morera's theorem ({莫列拉定理}): If $f(z)$ is continuous in $\bar{G}$, if for any closed curve (contour) in $\displaystyle \bar{G}, \oint_{C} f(z) d z=0$, then $f(z)$ is analytic in $G$.
+    Morera's theorem ({莫列拉定理}): If $f(z)$ is continuous in $\bar{G}$, if for any closed curve (contour) in $\displaystyle \bar{G}, \oint_{C} f(z) \D z=0$, then $f(z)$ is analytic in $G$.
 \end{theorem}
 \begin{theorem}
     \label{cit2}
@@ -602,14 +602,14 @@ $$\ref{int2}\equiv 0$$
     $$ \ointctrclockwise_C \F \D z= \sum_{n=1}^N \ointctrclockwise_{C_n} \F \D z$$
 \end{theorem}
 \begin{example}
-Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, $C$ is a simply closed curve in $\mathbb{C}$.
+Find the value of $\displaystyle \oint_{C} z^{n} \D z$, where $n$ is an integer, $C$ is a simply closed curve in $\mathbb{C}$.
 \begin{itemize} \rm
-\item  If $n$ is non-negative, $z^{n}$ is analytic, then $\displaystyle \oint_{C} z^{n} d z=0$.
-\item  If $n$ is negative, and if the contour does not enclose $z=0$, then $z^{n}$ is analytic inside the region bounded by $C$, and again we have $\displaystyle \oint_{C} z^{n} d z=0$.
+\item  If $n$ is non-negative, $z^{n}$ is analytic, then $\displaystyle \oint_{C} z^{n} \D z=0$.
+\item  If $n$ is negative, and if the contour does not enclose $z=0$, then $z^{n}$ is analytic inside the region bounded by $C$, and again we have $\displaystyle \oint_{C} z^{n} \D z=0$.
 \item  If $n$ is negative, and if the contour encloses $z=0$. We can draw a simple circle around $z=0$, and apply the Cauchy theorem for a multi-connected 
 \end{itemize}
 \begin{equation*}
-\oint_{C} z^{n} d z=\oint_{|z|=\varepsilon} z^{n} d z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{i(n+1) \theta} i d \theta=\left\{\begin{array}{l}
+\oint_{C} z^{n} \D z=\oint_{|z|=\varepsilon} z^{n} \D z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{i(n+1) \theta} i \D \theta=\left\{\begin{array}{l}
 2 \pi i, n=-1 ; \\
 0, n=-2,-3,-4, \ldots
 \end{array}\right.
@@ -625,7 +625,7 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     {\rm 小圆弧引理} Small Arc Lemma：
 
     {\rm If $f(z)$ is continuous in a small region around $z=a$, and satisfies the following relation: when $\theta_{1} \leq \arg (z-a) \leq \theta_{2},|z-a| \rightarrow 0,(z-a) f(z)$ uniformly approaches $k$. Then we have}
-    $$\lim _{\delta \rightarrow 0} \int_{C_{\delta}} f(z) d z=i k\left(\theta_{2}-\theta_{1}\right)$$
+    $$\lim _{\delta \rightarrow 0} \int_{C_{\delta}} f(z) \D z=i k\left(\theta_{2}-\theta_{1}\right)$$
 \end{lemma}
 
 \begin{lemma}
@@ -633,7 +633,7 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
 
     {\rm If $f(z)$ is continuous in a region around $z=\infty$, and satisfies the following relation: when $\theta_{1} \leq \arg (z) \leq \theta_{2}, z \rightarrow \infty, z f(z)$ uniformly approaches $K$. Then we have}
     \begin{equation*}
-    \lim _{R \rightarrow \infty} \int_{C_{R}} f(z) d z=i K\left(\theta_{2}-\theta_{1}\right)
+    \lim _{R \rightarrow \infty} \int_{C_{R}} f(z) \D z=i K\left(\theta_{2}-\theta_{1}\right)
     \end{equation*}
 \end{lemma}
 \section{柯西积分公式}
@@ -669,7 +669,7 @@ Find the value of $\displaystyle \oint_{C} z^{n} d z$, where $n$ is an integer, 
     {\rm Cauchy Integration Equation for Unbounded Region:}
 
     {\rm If $f(z)$ is a single-valued analytic function defined along and beyond a simply closed curve $C$ (including the infinity), then we have the following relation 
-    $$\frac{1}{2 \pi i}\left[\oint_{C_{R}} \frac{f(z)}{z-a} d z+\oint_{C} \frac{f(z)}{z-a} d z\right]=f(a)
+    $$\frac{1}{2 \pi i}\left[\oint_{C_{R}} \frac{f(z)}{z-a} \D z+\oint_{C} \frac{f(z)}{z-a} \D z\right]=f(a)
     $$
     where the integration is done along the positive direction of $C$ (which is clockwise) and the positive direction of $C_{R}$ (anti-clockwise).}
 \end{theorem}
@@ -924,7 +924,7 @@ $$R_2 := \text{以$z_0$为圆心的包含考察点$z$的最大解析环域的外
         \item $$|z|>1:\quad \frac{1}{z(z-1)}=\frac{1}{z^{2}} \frac{1}{1-\frac{1}{z}}=\frac{1}{z^{2}} \sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{n}=\sum_{n=-2}^{\infty} z^{n}$$ And we can confirm that $\frac{1}{z(z-1)}$ has singular point along $|z|=1$.
     \end{enumerate}
 \end{example}
-\chapter{留数定理、无穷积分}
+\chapter{留数定理}
 \section{留数定理}
 \begin{definition}
     孤立奇点：若$f(z)$在$z_0$处不解析，但在其邻域内全都可导($\exists \; r > 0\; s.t.\; \forall \;z:\; 0<|z-z_0|<r,\; f'(z_0) exists.$),那么$z_0$是$f(z)$的一个孤立奇点。
@@ -957,18 +957,18 @@ $$R_2 := \text{以$z_0$为圆心的包含考察点$z$的最大解析环域的外
 \begin{theorem}
     Assume that $G$ is a bounded region, and its boundary $C$ is a smooth, simply closed curve. If except for a finite number of isolated singular points $b_{k}, k=1,2,3 \ldots, n, f(z)$ is single-valued and analytic in $G$, and is continuous in $\bar{G}$ (including along $C$ ). Then we have the following relation:
     \begin{align*}
-        &\oint_{C} f(z) d z=2 \pi \mathrm{i} \sum_{k=1}^{n} \operatorname{res} f\left(b_{k}\right) \\
+        &\oint_{C} f(z) \D z=2 \pi \mathrm{i} \sum_{k=1}^{n} \operatorname{res} f\left(b_{k}\right) \\
         & \operatorname{res} f\left(b_{k}\right) \text { called the residue (留 数) of } f(z) \text { at } b_{k} \\
         & f(z)=\sum_{l=-\infty}^{\infty} a_{l}^{(k)}\left(z-b_{k}\right)^{l}, 0<\left|z-b_{k}\right|<r,\;\; \operatorname{res} f(b_k) := a_{-1}^{(k)}
     \end{align*}
 \end{theorem}
 \begin{proof}
     \begin{equation*}
-        \oint_{C} f(z) d z=\sum_{k=1}^{n} \oint_{\gamma_{k}} f(z) d z
+        \oint_{C} f(z) \D z=\sum_{k=1}^{n} \oint_{\gamma_{k}} f(z) \D z
     \end{equation*}
     Recalling that resault of
     \begin{equation*}
-        \oint_{C} z^{n} d z=\oint_{|z|=\varepsilon} z^{n} d z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{i(n+1) \theta} i d \theta=\left\{\begin{array}{l}
+        \oint_{C} z^{n} \D z=\oint_{|z|=\varepsilon} z^{n} \D z=\int_{0}^{2 \pi} \varepsilon^{n+1} e^{i(n+1) \theta} i \D \theta=\left\{\begin{array}{l}
         2 \pi i, n=-1 ; \\
         0, n=-2,-3,-4, \ldots
     \end{array}\right.
@@ -985,7 +985,7 @@ $$R_2 := \text{以$z_0$为圆心的包含考察点$z$的最大解析环域的外
     \end{equation*}
     \begin{equation*}
         a_{-1} =\frac{1}{(m-1)!}\lim_{z \to a} [(z-a)^mf(z)]^{m-1}
-    \end{equation*}
+    \end{equation*}\rm
     The general form of $f(z)$ is $\frac{P(z)}{Q(z)}$. If $P(z)$ and $Q(z)$ are analytic around $b$, and $P(b) \neq 0, z=b$ is the first-order zero point of $Q(z)$.
     $$
     a_{-1}=\lim _{z \rightarrow b}(z-b) f(z)=\lim _{z \rightarrow b}(z-b) \frac{P(z)}{Q(z)}=\frac{P(b)}{Q^{\prime}(b)}
@@ -1011,10 +1011,10 @@ $$
 \begin{example}
     如果$\infty$ 不是一个$f(z)$的非孤立奇点，那么我们可以定义$f$在$\infty$处的留数：
     \begin{equation*}
-        \operatorname{res} f(\infty)=\frac{1}{2 \pi \mathrm{i}} \ointclockwise{C} f(z) d z \quad \text{\small 顺时针积分可以包含$\infty$}
+        \operatorname{res} f(\infty)=\frac{1}{2 \pi \mathrm{i}} \ointclockwise{C} f(z) \D z \quad \text{\small 顺时针积分可以包含$\infty$}
     \end{equation*}
     \begin{align*}
-        \operatorname{res} f(\infty)&=\frac{1}{2 \pi \mathrm{i}} \ointclockwise{C} f(z) d z=-\frac{1}{2 \pi \mathrm{i}} \ointctrclockwise_{C} \frac{f(1 / t)}{t^{2}} d t\\
+        \operatorname{res} f(\infty)&=\frac{1}{2 \pi \mathrm{i}} \ointclockwise{C} f(z) \D z=-\frac{1}{2 \pi \mathrm{i}} \ointctrclockwise_{C} \frac{f(1 / t)}{t^{2}} \D t\\
         &=-\frac{f(1 / t)}{t^{2}} \quad \text{\small coefficient of term $t^{-1}$ around 0 }
         \\&=-f(1 / t) \quad \text{\small coefficient of term $t^{1}$ around 0 }
         \\&=-f(z) \quad \text{\small coefficient of term $z^{-1}$ around $\infty$ Note $z^{-1}$ is analytic at $\infty$}
@@ -1023,7 +1023,7 @@ $$
 
     同样，$\infty$可能是$f$的一个孤立奇点，但是留数为0.
 \end{example}
-\section{留数定理的应用}
+\section{留数定理的应用:无穷积分}
 \begin{method}
     使用留数定理计算积分
     $$
@@ -1032,7 +1032,7 @@ $$
 \end{method}
 \begin{example}
     Compute$$I=\int_{0}^{\pi} \frac{1}{1+\varepsilon \cos \theta} \D \theta,|\varepsilon|<1 $$
-    \begin{align*}
+    \rm \begin{align*}
         I&=\frac{1}{2} \int_{-\pi}^{\pi} \frac{1}{1+\varepsilon \cos \theta} \D \theta=\frac{1}{2} \oint_{|z|=1} \frac{1}{1+\varepsilon \frac{z^{2}+1}{2 z}} \frac{\D z}{\mathrm{i} z} \\
         &=\frac{1}{2} \oint_{|z|=1} \frac{2}{\varepsilon z^{2}+2 z+\varepsilon} \frac{\D z}{\mathrm{i}}=\pi \sum_{|z|<1} \mathrm{res} \frac{2}{\varepsilon z^{2}+2 z+\varepsilon} \\
         &=\left.\pi \frac{2}{2 \varepsilon z+2}\right|_{z=\left(-1+\sqrt{1-\varepsilon^{2}}\right) / \varepsilon}=\frac{\pi}{\sqrt{1-\varepsilon^{2}}}
@@ -1044,9 +1044,9 @@ $$
     $$v.p. \;\; I = \lim_{R\to \infty} \int_{-R}^R f(x) \D x$$
 \end{definition}
 \begin{example}
-    Compute $$\int_0^\infty \frac{\D x}{1+x^4}$$
+    Compute $$\int_0^\infty \frac{\D x}{1+x^4}$$\rm
     \begin{align*}
-    \oint_{C} \frac{1}{1+z^{4}} d z&=\int_{0}^{R} \frac{1}{1+x^{4}} d x+\int_{C_{R}} \frac{1}{1+z^{4}} d z+\int_{R}^{0} \frac{\mathrm{i} d y}{1+(\mathrm{i} y)^{4}}\\
+    \oint_{C} \frac{1}{1+z^{4}} \D z&=\int_{0}^{R} \frac{1}{1+x^{4}} \D x+\int_{C_{R}} \frac{1}{1+z^{4}} \D z+\int_{R}^{0} \frac{\mathrm{i} \D y}{1+(\mathrm{i} y)^{4}}\\
     &=(1-\mathrm{i}) \int_{0}^{R} \frac{d x}{1+x^{4}}+{\color{red} \int_{c_{R}} \frac{d z}{1+z^{4}}}\\
     &=\left.2 \pi \operatorname{ires} \frac{1}{1+z^{4}}\right|_{z=e^{\mathrm{i} \pi / 4}}=\frac{\pi}{2} \frac{1-\mathrm{i}}{\sqrt{2}}
     \end{align*}
@@ -1063,28 +1063,41 @@ $$
 \begin{method}
     计算
     $$
-    I=\int_{-\infty}^{\infty} f(x) \cos p x d x, I=\int_{-\infty}^{\infty} f(x) \sin p x d x
-    $$
+    I=\int_{-\infty}^{\infty} f(x) \cos p x \D x, I=\int_{-\infty}^{\infty} f(x) \sin p x \D x
+    $$\rm
     我们使用：
     $$
-    \oint_{C} f(z) e^{\mathrm{i} p z} d z=\int_{-R}^{R} f(x)(\cos p x+\mathrm{i} \sin p x) d x+\int_{C_{R}} f(z) e^{\mathrm{i} p z} d z
+    \oint_{C} f(z) e^{\mathrm{i} p z} \D z=\int_{-R}^{R} f(x)(\cos p x+\mathrm{i} \sin p x) \D x+\int_{C_{R}} f(z) e^{\mathrm{i} p z} \D z
     $$
 \end{method}
 \begin{lemma}
     Jordan's Lemma:\rm
+
     Assume that in $0 \leq \arg z \leq \pi$, when $|z| \rightarrow \infty, Q(z)$ uniformly converges to 0 . then
     $$
-    \lim _{R \rightarrow \infty} \int_{C_{R}} Q(z) e^{\mathrm{i} p z} d z=0
+    \lim _{R \rightarrow \infty} \int_{C_{R}} Q(z) e^{\mathrm{i} p z} \D z=0
     $$
     where $p>0, C_{R}$ is an arc centered at origin, in the upper half space.
 \end{lemma}
+\begin{proof} Along the arc, we have $z=R e^{\mathrm{i} \theta}$.
+The condition of uniform convergence implies that $$\forall \varepsilon>0, \exists M(\varepsilon)>0 \text { (not related to } z)$$ when $|z|=R>M
+\text { and } 0 \leq \arg z \leq \pi,|Q(z)|<\varepsilon $
+$$
+\begin{aligned}
+\left|\int_{C_{R}} Q(z) e^{\mathrm{i} p z} \D z\right|&=\left|\int_{0}^{\pi} Q\left(R e^{\mathrm{i} \theta}\right) e^{\mathrm{i} p R(\cos \theta+\mathrm{i} \sin \theta)} R e^{\mathrm{i} \theta} \mathrm{i} \D \theta\right| \\
+&\leq \int_{0}^{\pi}\left|Q\left(R e^{\mathrm{i} \theta}\right)\right| e^{-p R \sin \theta} R \D \theta\\
+&<\varepsilon R \int_{0}^{\pi} e^{-p R \sin \theta} \D \theta=2 \varepsilon R \int_{0}^{\pi / 2} e^{-p R \sin \theta} \D \theta\\
+&<2 \varepsilon R \int_{0}^{\pi / 2} e^{-2 p R \theta / \pi} \D \theta=\frac{\varepsilon \pi}{p}\left(1-e^{-p R}\right) \to 0
+\end{aligned}
+$$
+\end{proof}
 \begin{example}
-    \text {Compute } $$\int_{0}^{\infty} \frac{x \sin x}{x^{2}+a^{2}} d x, a>0 $$
-    We choose one integral path:
-    $$(0,0)\to(R,0)\to(0,R)\to(-R,0)$$ and let $R\to \infty$
+    \text {Compute } $$\int_{0}^{\infty} \frac{x \sin x}{x^{2}+a^{2}} \D x, a>0 $$
+    \rm We choose one integral path:
+    $$(0,0)\to(R,0)\to(0,R)\to(-R,0)\to(0,0)$$ and let $R\to \infty$
     \begin{align*}
         \begin{aligned}
-        \oint_{C} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}} d z&=\int_{-R}^{R} \frac{x e^{\mathrm{i} x}}{x^{2}+a^{2}} d x+{\color{red} \int_{C_{R}} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}} d z }\\
+        \oint_{C} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}} \D z&=\int_{-R}^{R} \frac{x e^{\mathrm{i} x}}{x^{2}+a^{2}} \D x+{\color{red} \int_{C_{R}} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}} \D z }\\
         &=\left.2 \pi \mathrm{i} \operatorname{res} \frac{z e^{\mathrm{i} z}}{z^{2}+a^{2}}\right|_{z=a \mathrm{i}}\\
         &=\pi \mathrm{i} e^{-a}
         \end{aligned}
@@ -1092,5 +1105,104 @@ $$
     And the {\color{red}red integral} is calculated by Jordan lemma:
     $$\lim_{R\to \infty} \frac{z}{z^2+a^2} = 0$$
     Thus, $$O.E.=\frac{\pi}{2}e^{-a}$$
+\end{example}
+\begin{lemma}
+    A Complementary Lemma of Jordan Lemma:\rm
+
+    Assume that $Q(z)$ only has a limited number of singular points. In the lower half space, when $|z| \rightarrow \infty, Q(z)$ converges to 0 uniformly. Then
+$$\lim _{R \rightarrow \infty} \int_{C_{R}} Q(z) e^{-\mathrm{i} p z} \D z=2 \pi \mathrm{i} \cdot \sum_{\text {whole space }} \operatorname{res}\left\{Q(z) e^{-\mathrm{i} p z}\right\}$$
+where $p>0, C_{R}$ is a half circle centered at origin, in the upper half space.
+\end{lemma}
+\section{路径上含有奇点的积分}
+\begin{definition}
+    对于路径上有奇点的积分，我们同样定义主值积分：
+    $$
+    \begin{aligned}
+        &\int_{a}^{b} f(x) d x=\lim _{\delta_{1} \rightarrow 0} \int_{a}^{c-\delta_{1}} f(x) d x+\lim _{\delta_{2} \rightarrow 0} \int_{c+\delta_{2}}^{b} f(x) d x \\
+        &\text { v.p. } \int_{a}^{b} f(x) d x=\lim _{\delta \rightarrow 0}\left[\int_{a}^{c-\delta} f(x) d x+\int_{c+\delta}^{b} f(x) d x\right]
+    \end{aligned}
+    $$
+\end{definition}
+对于一阶极点，我们可以使用 Large\&Small Arc Lemma 轻松搞定，然而，考虑如下积分：
+\begin{example}
+    Compute $$\text { v.p. } \int_{-\infty}^{\infty} \frac{d x}{x\left(1+x+x^{2}\right)}$$
+    \rm 这个积分，我们尝试如下积分路径：
+    $$(\delta,0)\to(R,0)\to(0,R)\to(-R,0)\to(-\delta,0)\to(0,\delta)\to(\delta,0)$$
+    We let $R\to\infty, \delta\to0$.
+    $$
+    \begin{aligned}
+    \oint_{C} \frac{d z}{z\left(1+z+z^{2}\right)}&={\color{red} \int_{-R}^{-\delta} \frac{d x}{x\left(1+x+x^{2}\right)}}+{\color{blue}\int_{C_{\delta}} \frac{d z}{z\left(1+z+z^{2}\right)}}\\
+    &+{\color{red}\int_{\delta}^{R} \frac{d x}{{x\left(1+x+x^{2}\right)}}} + {\color{violet}\int_{C_{R}} \frac{d z}{z\left(1+z+z^{2}\right)}}
+    \end{aligned}
+    $$
+    {\color{red} Red Integral}:
+    $$
+    {\color{red} R}=v.p.\; \int_{-\infty}^\infty \frac{\D x}{x(1+x+x^2)}
+    $$
+    {\color{blue} Blue Integral}:
+    $$
+    \int_{C_\delta}\text{clockwise} = -\int_{C_\delta} \text{anti-clockwise}
+    $$
+    so,
+    $$
+    \lim_{z\to 0} z\cdot \frac{1}{z(1+z+z^2)}=1 \Rightarrow
+    {\color{blue}B} =-i\pi (\text{by small arc lemma})
+    $$
+    {\color{violet} Violet Integral}:
+    $$
+    \lim_{z\to \infty} z\cdot \frac{1}{z(1+z+z^2)}=0 \Rightarrow
+    {\color{violet} V}=0(\text{by large arc lemma})
+    $$
+    $$
+    L.H.S= 2 \pi \mathrm{i} \text { res }\left.\frac{1}{z\left(1+z+z^{2}\right)}\right|_{z=e^{\mathrm{i} 2 \pi / 3}}=-\frac{\pi}{\sqrt{3}}-\mathrm{i} \pi
+    $$
+    Thus, we have:
+    $$
+    O.E.= -\frac{\pi}{\sqrt{3}}
+    $$
+\section{包含割线的积分}
+\begin{method}
+    $z^{s-1}$是一个多值函数，其割线为$(0\to (\infty,0))$,$Q(z)$是一个单值函数。计算：
+    $$\int_{0}^{\infty} x^{s-1} Q(x) d x$$
+    我们使用如下路径：
+    \begin{align*}
+        \delta\to0,R\to\infty:\;\;(\delta,0^-)\to(0,-\delta)\to(-\delta,0)\to(0,\delta)\to\\
+        (\delta,0^+)\to(R,0^+)\to(0,R)\to(-R,0)\to(0,-R)\to(R,0^-)\to(\delta,0^-)
+    \end{align*}
+    $$
+    \begin{aligned}
+    \oint_{C} z^{s-1} Q(z) d z=\int_{C_{\delta}} z^{s-1} Q(z) d z+\int_{\delta}^{R} x^{s-1} Q(x) d x \\
+    +\int_{C_{R}} z^{s-1} Q(z) d z+\int_{R}^{\delta}\left(x e^{\mathrm{i} 2 \pi}\right)^{s-1} Q(x) d x
+    \end{aligned}
+    $$
+\end{method}
+\begin{example}
+    Compute $$\int_{0}^{\infty} \frac{x^{a-1}}{x+e^{\mathrm{i} \phi}} d x, 0<a<1,-\pi<\phi<\pi$$\rm
+    \begin{align*}
+        \oint_{C} \frac{z^{a-1}}{z+e^{\mathrm{i} \phi}} d z&={\color{red}\int_{\delta}^{R} \frac{x^{a-1}}{x+e^{\mathrm{i} \phi}} d x}+{\color{cyan}\int_{C_{R}} \frac{z^{a-1}}{z+e^{\mathrm{i} \phi}} d z}\\
+        &+{\color{red} \int_{R}^{\delta} \frac{\left(x e^{\mathrm{i} 2 \pi}\right)^{a-1}}{x+e^{\mathrm{i} \phi}} d x}+{\color{blue}\int_{C_{\delta}} \frac{z^{a-1}}{z+e^{\mathrm{i} \phi}} d z}
+    \end{align*}
+    {\color{red} Red Integral} gives:
+    $$
+    \left(1-e^{\mathrm{i} 2 \pi a}\right) \int_{\delta}^{R} \frac{x^{a-1}}{x+e^{\mathrm{i} \phi}} d x
+    $$
+    {\color{cyan} Cyan Integral} gives:
+    $$
+    \lim_{z\to 0}\frac{z^a}{z+e^{i\phi}}=0\Rightarrow
+    Origin.Integral.=0
+    $$
+    {\color{blue} Blue Integral} gives:
+    $$
+    \lim_{z\to \infty}\frac{z^a}{z+e^{i\phi}}=0\Rightarrow
+    Origin.Integral.=0
+    $$
+    $$
+    L.H.S=2 \pi \mathrm{i} \sum \operatorname{res} \frac{z^{a-1}}{z+e^{\mathrm{i} \phi}} z=e^{\mathrm{i}(\phi+\pi)}\;\;( 0<\phi+\pi<2 \pi)
+    $$
+    Thus,
+    $$
+    \int_{0}^{\infty} \frac{x^{a-1}}{x+e^{\mathrm{i} \phi}} d x=-\frac{2 \pi \mathrm{i}}{1-e^{\mathrm{i} 2 \pi a}} e^{\mathrm{i} \pi a} e^{\mathrm{i} \phi(a-1)}=\frac{\pi}{\sin \pi a} e^{\mathrm{i} \phi(a-1)}
+    $$
+\end{example}
 \end{example}
 \end{document}
