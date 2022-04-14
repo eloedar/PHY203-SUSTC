@@ -42,6 +42,7 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
+\chapter*{复变函数部分}
 \chapter{复数}
 \textbf{约定}：
 我们认为$z\in \mathbb{C}$，$x,y \in \mathbb{R}$
@@ -1205,4 +1206,147 @@ where $p>0, C_{R}$ is a half circle centered at origin, in the upper half space.
     $$
 \end{example}
 \end{example}
+\chapter*{微分方程部分}
+\chapter{偏微分方程}
+\section{Some Basic Assumptions}
+\begin{definition}
+    Order of differential equation:\rm  Equals to the highest order of the equation.
+\end{definition}
+\begin{definition}
+    Linear: \rm 
+    \begin{equation*}
+        a_{0} y+a_{1} y^{\prime}+a_{2} y^{\prime \prime}+a_{3} y^{\prime \prime \prime}+\cdots=b
+    \end{equation*}
+    Where $a_i$ and $b_i$ are not function of $y$.
+    \begin{equation*}
+        \begin{aligned}
+        y^{\prime} &=\cot y &(\text {not linear because of the term } \cot y) \\
+        y^{\prime} &=1 &\left(\text {not linear because of the product } y y^{\prime}\right) \\
+        y^{\prime^{2}} &=x y  &(\text {not linear because of the term } y^{\prime^{2}}) .
+        \end{aligned}
+        \end{equation*}
+\end{definition}
+\begin{definition}
+    A solution of an PDE: \rm
+    A solution of a differential equation (in the variables $x$ and $y$ ) is a relation between $x$ and $y$ which, if substituted into the differential equation, gives an identity.
+\end{definition}
+\begin{definition}
+    General solutions and particular solutions: \rm
+    $$\frac{\partial^{2} U}{\partial x \partial y}=2 y-x$$
+    $$
+    \begin{aligned}
+        &\text { One particular solution is } U(x, y)=x y^{2}-\frac{1}{2} x^{2} y \\
+        &\text { The general solution is } U(x, y)=x y^{2}-\frac{1}{2} x^{2} y+A(x) + B(y)
+    \end{aligned}
+    $$
+\end{definition}
+\begin{definition}
+    $$
+    \hat{L}[u]=f \quad \hat{L} \text { : linear operator }
+    $$
+    \rm
+
+    If $f=0$, we say that the equation is {\color{red}homogeneous}. 
+
+    If $f\ne0$, we say that the equation is {\color{red}inhomogeneous}. 
+\end{definition}
+Suppose $\hat{L}$ is a linear operator, we have:
+$$\hat{L}\left[c_{1} u_{1}+c_{2} u_{2}\right]=c_{1} \hat{L}\left[u_{1}\right]+c_{2} \hat{L}\left[u_{2}\right], \; (c_{1}, c_{2}=constant)$$  
+If both $u_{1}$ and $u_{2}$ are solutions to a homogeneous equation $\hat{L}[u]=0$, then we have $$\hat{L}\left[c_{1} u_{1}+c_{2} u_{2}\right]=0$$
+
+If both $u_{1}$ and $u_{2}$ are solutions to an inhomogeneous equation $\hat{L}[u]=f$, then we have $$\hat{L}\left[u_{1}-u_{2}\right]=0$$
+
+Because $$u_{1}=\left(u_{1}-u_{2}\right)+u_{2}$$ this means the summation of a solution to a homogeneous equation and a solution to an inhomogeneous equation is still a solution to the original inhomogeneous equation.
+\section{偏微分方程的解法——几种情况}
+对于如下偏微分方程：
+$$
+A_{0} \frac{\partial^{n} u}{\partial x^{n}}+A_{1} \frac{\partial^{n} u}{\partial x^{n-1} \partial y}+\ldots+A_{n} \frac{\partial^{n} u}{\partial y^{n}}+B_{0} \frac{\partial^{n-1} u}{\partial x^{n-1}}+\ldots+M \frac{\partial u}{\partial x}+N \frac{\partial u}{\partial y}+P u=f(x, y)
+$$
+如果引入记号:
+$$
+\text { Denote } \hat{D}_{x} \equiv \partial / \partial x, \hat{D}_{y} \equiv \partial / \partial y
+$$
+那么原式可以表示为：
+\begin{align*}
+    \hat{L}(\hat{D}_{x}, \hat{D}_{y}) u=(A_{0} \hat{D}_{x}^{n}+A_{1} \hat{D}_{x}^{n-1} \hat{D}_{y}+\ldots+A_{n} \hat{D}_{y}^{n}+
+    \\ B_{0} \hat{D}_{x}^{n-1}+\ldots+M \hat{D}_{x}+N \hat{D}_{y}+P) u=f(x, y)
+\end{align*}
+\subsection{Homogenueous Case}
+齐次情况时，原式写成：
+$$
+\left(A_{0} \hat{D}_{x}^{n}+A_{1} \hat{D}_{x}^{n-1} \hat{D}_{y}+\ldots+A_{n} \hat{D}_{y}^{n}\right) u=0
+$$
+对左侧做多项式分解，可以得到：
+$$
+\hat{L}\left(\hat{D}_{x}, \hat{D}_{y}\right)=A_{0}\left(\hat{D}_{x}-a_{1} \hat{D}_{y}\right)\left(\hat{D}_{x}-a_{2} \hat{D}_{y}\right) \ldots\left(\hat{D}_{x}-a_{n} \hat{D}_{y}\right)
+$$
+如果我们假定原方程有一个Trial Solution，记为：
+$$u=\phi (y+ax)$$
+注意到,由链式法则
+$$
+\hat{D}_{x}^{k}=a^{k} \phi^{(k)}(y+a x), \hat{D}_{y}^{k}=\phi^{(k)}(y+a x), \hat{D}_{x}^{r} \hat{D}_{y}^{s}=a^{r} \phi^{(r+s)}(y+a x)
+$$
+将上述等式代入原方程，得到
+\begin{gather}
+    \left(A_{0} a^{n}+A_{1} a^{n-1}+\ldots+A_{n}\right) \phi^{(n)}(y+a x)=0 \Rightarrow \notag \\
+    \left(A_{0} a^{n}+A_{1} a^{n-1}+\ldots+A_{n}\right) = 0 \label{case1}
+\end{gather}
+\ref{case1} 的解记为
+$$a_1,\;a_2,\;a_3,\;,\dots,\;a_n \;\;(\text{Assume No Multiple Roots})$$
+那么原式的解：
+$$
+u=\phi_{1}\left(y+a_{1} x\right)+\phi_{2}\left(y+a_{2} x\right)+\ldots+\phi_{n}\left(y+a_{n} x\right)
+$$
+对于重根：
+Generally, if $a$ is n multiple root, i.e. 
+$$\hat{L}\left(\hat{D}_{x}, \hat{D}_{y}\right) u=\left(\hat{D}_{x}-a \hat{D}_{y}\right)^{n} u=0$$
+ then the general solution is
+$$
+u=x^{n-1} \phi_{1}(y+a x)+x^{n-2} \phi_{2}(y+a x)+\ldots+x \phi_{n-1}(y+a x)+\phi_{n}(y+a x)
+$$
+\subsection{Inhomogeneous Case——1-st Order}
+原式：
+$$
+(\hat{D}_{x}-a\hat{D}_{y}-b)u=0
+$$
+我们假定原式有如下形式的解：
+$$u=f(x)\phi(y+ax)$$
+\begin{align*}
+    &\left(\hat{D}_{x}-a \hat{D}_{y}-b\right)[f(x) \phi(y+a x)]=\\
+    &f(x) \underbrace{\left(\hat{D}_{x}-a \hat{D}_{y}\right) \phi(y+a x)}_{=0}+\phi(y+a x)\left(\hat{D}_{x}-b\right) f(x)=0 \Rightarrow \\
+    &f'-bf=0 \Rightarrow f=Ce^{bx} \Rightarrow u=Ce^{bx}\phi(y+ax)=e^{bx}\phi(y+ax)
+\end{align*}
+\subsection{General Solutions to Linear inhomo-PDEs}
+inhome-PDE 的解可以写成通解与特解之和的形式。
+
+$f=e^{ax+by},\;\; \hat{L}\left(\hat{D}_{x}, \hat{D}_{y}\right)=\hat{D}_{y}+\hat{D}_{x}$:
+
+If so,then, it is easy to verify:
+$$
+\hat{L}^{-1}\left(\hat{D}_{x}, \hat{D}_{y}\right) e^{a x+b y}=\frac{1}{L(a, b)} e^{a x+b y}, L(a, b) \neq 0
+$$
+where $L(a,b)$ is polynomial of $a$ and $b$.
+$L(a,b)$ is calculated by this in this case:
+$$
+\hat{D}_{x} f = af;\;\;\hat{D}_{y} f= bf;\;\; L(a,b)=a+b
+$$
+So, a particular solution of this PDE is:
+$$
+u_0=\frac{f(x,y)}{\hat{L}\left(\hat{D}_{x}, \hat{D}_{y}\right)}=\frac{f(x,y)}{{L}\left(a,b\right)}=\frac{f(x,y)}{a+b}
+$$
+IF $L(a,b)=0$:
+Without losing generality, we can assume:
+$$
+\hat{L}\left(\hat{D}_{x}, \hat{D}_{y}\right)=b \hat{D}_{x}-a \hat{D}_{y}, \quad[L(a, b)=b \cdot a-a \cdot b=0]
+$$
+$$\left(b \hat{D}_{x}-a \hat{D}_{y}\right) u=e^{a x+b y}$$
+we assume the special solution as 
+$$u_{0}(x, y)=f(x, y) e^{a x+b y}$$ 
+$$\left(b \hat{D}_{x}-a \hat{D}_{y}\right) f(x, y)=1$$ 
+Let's further assume 
+$$f(x, y)=\alpha x+\beta y+\gamma \Rightarrow b \alpha-a \beta=1$$
+\begin{itemize}
+    \item If we take $\beta=\gamma=0, \alpha=1 / b \quad u_{0}=(x / b) \cdot e^{a x+b y}$
+    \item If we take $\alpha=\gamma=0, \beta=-1 / a \quad u_{0}=(-y / a) \cdot e^{a x+b y}$    
+\end{itemize}
 \end{document}
