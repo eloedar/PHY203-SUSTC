@@ -34,4 +34,5 @@
 \contentsline {section}{\numberline {7.2}偏微分方程的解法——几种情况}{36}{section.7.2}%
 \contentsline {subsection}{\numberline {7.2.1}Homogenueous Case}{36}{subsection.7.2.1}%
 \contentsline {subsection}{\numberline {7.2.2}Inhomogeneous Case——1-st Order}{37}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}General Solutions to Linear inhomo-PDEs}{38}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.3}inhomo-PDEs——Expotential}{38}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}inhomo-PDEs——Summation}{39}{subsection.7.2.4}%
