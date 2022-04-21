@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2022.3.31)  21 APR 2022 00:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2022.3.31)  21 APR 2022 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -786,27 +786,32 @@ File: uesint.fd
 
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 41.
- [1] [1] [2] [3] [4] [5] [6]
-Overfull \hbox (39.65654pt too wide) in paragraph at lines 240--241
+ [1] [1] [2] [3] [4] [5]
+Overfull \hbox (5.84209pt too wide) in paragraph at lines 241--242
 [][] 
  []
 
-
-Overfull \hbox (39.65654pt too wide) in paragraph at lines 263--266
-[][]
+[6]
+Overfull \hbox (5.84209pt too wide) in paragraph at lines 266--267
+[][] 
  []
 
-[7] (./Midterm.aux)
+[7]
+Overfull \hbox (5.84209pt too wide) in paragraph at lines 329--330
+[][] 
+ []
+
+[8] [9] [10] (./Midterm.aux)
 Package rerunfilecheck Info: File `Midterm.out' has not changed.
-(rerunfilecheck)             Checksum: 683107BBDD5B5453FF6A76D29E771AEA;947.
+(rerunfilecheck)             Checksum: B7859BE330C0F2703AC9493FDC961EE2;1385.
  ) 
 Here is how much of TeX's memory you used:
- 36464 strings out of 476919
- 905777 string characters out of 5825424
- 1363806 words of memory out of 5000000
- 55830 multiletter control sequences out of 15000+600000
+ 36532 strings out of 476919
+ 909580 string characters out of 5825424
+ 1365118 words of memory out of 5000000
+ 55898 multiletter control sequences out of 15000+600000
  419975 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,10n,104p,724b,2137s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 102i,14n,104p,724b,2255s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Midterm.pdf (9 pages).
+Output written on Midterm.pdf (12 pages).

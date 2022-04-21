@@ -213,58 +213,163 @@ L(z)=\operatorname{Ln}(z)
 $$
 拥有其在实数域上所不具备的多值性。下面我们对两个函数分别进行讨论。
 \subsection{根式函数的多值性来源}
-实数域中，根式函数定义为指数函数的反函数：
+实数域中，根式函数定义为幂函数的反函数：
 $$\forall\; x,y\in \mathbb{R}:\quad f(x)=y=x^n \to f^{-1}(y)=x=\sqrt[n]{y}$$
 实数域中的根式函数有时也会遇到“多值性”。考虑函数$f(x)=x^2$，其反函数$f^{-1}(y)$似乎存在两个值对应。如图：
 
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6699535962877032cm,y=1.0cm]
-    \begin{axis}[
-    x=0.6699535962877032cm,y=1.0cm,
-    axis lines=middle,
-    ymajorgrids=true,
-    xmajorgrids=true,
-    xmin=-10.0,
-    xmax=10.0,
-    ymin=-1.0,
-    ymax=5.0,
-    xtick={-10.0,-9.0,...,10.0},
-    ytick={-1.0,0.0,...,5.0},]
-    \clip(-10.,-1.) rectangle (10.,5.);
-    \draw [samples=50,rotate around={0.:(0.,0.)},xshift=0.cm,yshift=0.cm,line width=2.pt,domain=-5.0:5.0)] plot (\x,{(\x)^2/2/0.5});
-    \draw [line width=2.pt,domain=-10.:10.] plot(\x,{(--3.-0.*\x)/1.});
-    \begin{scriptsize}
-    \draw[color=black] (-0.6143722943722925,1.1583549783549796) node {$f$};
-    \draw[color=black] (-3.402251082251079,2.8726406926406947) node {$g$};
-    \end{scriptsize}
-    \end{axis}
-    \end{tikzpicture}
+\begin{figure}[h]
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=\textwidth/22,y=1.0cm]
+        \begin{axis}[
+        x=\textwidth/21,y=1.0cm,
+        axis lines=middle,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        xmin=-10.0,
+        xmax=10.0,
+        ymin=-1.0,
+        ymax=5.0,
+        xtick={-10.0,-9.0,...,10.0},
+        ytick={-1.0,0.0,...,5.0},]
+        \clip(-10.,-1.) rectangle (10.,5.);
+        \draw [samples=50,rotate around={0.:(0.,0.)},xshift=0.cm,yshift=0.cm,line width=2.pt,domain=-5.0:5.0)] plot (\x,{(\x)^2/2/0.5});
+        \draw [line width=2.pt,domain=-10.:10.] plot(\x,{(--3.-0.*\x)/1.});
+        \begin{scriptsize}
+        \draw[color=black] (-0.6143722943722925,1.1583549783549796) node {$f$};
+        \draw[color=black] (-3.402251082251079,2.8726406926406947) node {$g$};
+        \end{scriptsize}
+        \end{axis}
+        \end{tikzpicture}
+\end{figure}
 
 对于$f(x)=x^2$，任一一个给定的$y$都有两个$x$值与$y$对应，这意味着$y=x^2$的严格定义的反函数有可能具备某种多值性。然而，
 为何实数域上，当我们定义其反函数时，只定义在了$y>0$的情况？
 
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6699535962877032cm,y=1.0cm]
-    \begin{axis}[
-    x=0.6699535962877032cm,y=1.0cm,
-    axis lines=middle,
-    ymajorgrids=true,
-    xmajorgrids=true,
-    xmin=-10.0,
-    xmax=10.0,
-    ymin=-1.0,
-    ymax=5.0,
-    xtick={-10.0,-9.0,...,10.0},
-    ytick={-1.0,0.0,...,5.0},]
-    \clip(-10.,-1.) rectangle (10.,5.);
-    \draw[line width=2.pt,color=black,smooth,samples=100,domain=1.9999999794608742E-7:10.0] plot(\x,{sqrt((\x))});
-    \begin{scriptsize}
-    \draw[color=black] (0.05955663569354158,0.23335676720969983) node {$f$};
-    \end{scriptsize}
-    \end{axis}
-\end{tikzpicture}
+\begin{figure}[h]
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=\textwidth/22,y=1.0cm]
+        \begin{axis}[
+        x=\textwidth/21,y=1.0cm,
+        axis lines=middle,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        xmin=-10.0,
+        xmax=10.0,
+        ymin=-1.0,
+        ymax=5.0,
+        xtick={-10.0,-9.0,...,10.0},
+        ytick={-1.0,0.0,...,5.0},]
+        \clip(-10.,-1.) rectangle (10.,5.);
+        \draw[line width=2.pt,color=black,smooth,samples=100,domain=1.9999999794608742E-7:10.0] plot(\x,{sqrt((\x))});
+        \begin{scriptsize}
+        \draw[color=black] (0.05955663569354158,0.23335676720969983) node {$f$};
+        \end{scriptsize}
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 这可能是为了简化实数域内的相关计算。
 
 由欧拉公式，在复数域内，
 $$
 e^{i\theta}=\cos \theta + i \sin \theta
 $$
+那么由三角函数的诱导公式，得到：
+$$
+e^{i\theta+2n\pi i}=\cos (\theta+2n\pi) + i \sin (\theta+2n\pi)=\cos \theta + i \sin \theta=e^{i\theta}
+$$
+考虑到任何一个复平面上的复数都可以表示为
+$$
+z=r\cdot e^{i\theta}=re^{i\theta+2n\pi i}
+$$
+假定$r=1$,那么根据幂运算的性质，根式函数$r_k(z)$:
+$$
+\sqrt[k]{z}=e^{(i\theta+2n\pi i)/k}=e^{i\theta/k+2n\pi i/k} =e^{i\theta/k+\Sigma}
+$$
+其中$\Sigma$:
+$$
+\Sigma = 2 \pi i /k + 4 \pi i/k+\dots+2(k-1)\pi i/k
+$$
+也就是说，如果我们约定$k\in \mathbb{Z}$, 那么一个$k$次方根式函数，拥有$k$个不同的多值分支。众所周知，一个复数$z$可以写成
+$$
+z=x+iy\;\; z\in\mathbb{C} \;\; x,y \in \mathbb{R}
+$$
+如果我们令$y=0$，则复数$z$“退化”为了实数。但是，根据复数根式函数的定义，当$y=0$时，其辐角$\theta=n\pi$，则
+$$
+z=e^{in\pi}
+$$
+那么根式函数(以二次根为例)
+$$
+r_2(z)=e^{in\pi/2}=e^{0i}\;\; \text{or} \;\; e^{i\pi}
+$$
+换言之，即使$z$“退化”为了实数，根式函数的多值性依然保留，而不是像实数域的根式函数一样只保留其中的一支，也意味着复数域上的根式函数与实数域上的根式函数有着本质区别，
+复数域上的根式函数更“严格”地保留了幂函数反函数的意义。
+
+\subsection{对数函数的多值性的来源}
+实数域中，(自然)对数函数定义为指数函数的反函数：
+$$\forall\; x,y\in \mathbb{R}:\quad f(x)=y=e^x \to f^{-1}(y)=x=\ln y$$
+与实数域的根式函数不同，实数域的指数函数是不存在多值性的。
+
+\begin{figure}[h]
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=\textwidth/22,y=1.0cm]
+        \begin{axis}[
+        x=\textwidth/21,y=1.0cm,
+        axis lines=middle,
+        ymajorgrids=true,
+        xmajorgrids=true,
+        xmin=-10.0,
+        xmax=10.0,
+        ymin=-1.0,
+        ymax=5.0,
+        xtick={-10.0,-9.0,...,10.0},
+        ytick={-1.0,0.0,...,5.0},]
+        \clip(-10.,-1.) rectangle (10.,5.);
+        \draw [samples=50,rotate around={0.:(0.,0.)},xshift=0.cm,yshift=0.cm,line width=2.pt,domain=-5.0:5.0)] plot (\x,{(e^\x)/2/0.5});
+        \draw [line width=2.pt,domain=-10.:10.] plot(\x,{(--3.-0.*\x)/1.});
+        \begin{scriptsize}
+        \end{scriptsize}
+        \end{axis}
+        \end{tikzpicture}
+\end{figure}
+
+由欧拉公式，在复数域内，
+$$
+e^{i\theta}=\cos \theta + i \sin \theta
+$$
+那么由三角函数的诱导公式，得到：
+$$
+e^{i\theta+2n\pi i}=\cos (\theta+2n\pi) + i \sin (\theta+2n\pi)=\cos \theta + i \sin \theta=e^{i\theta}
+$$
+考虑到任何一个复平面上的复数都可以表示为
+$$
+z=r\cdot e^{i\theta}=re^{i\theta+2n\pi i}
+$$
+那么根据幂运算的性质，对数函数$\operatorname{Ln} z$:
+$$
+\operatorname{Ln} z = \operatorname{Ln} r  e^{i\theta} = \operatorname{Ln} r e^{i\theta + 2n\pi i} = \ln r + i(\theta+2n\pi i) = \ln |z| + i(\theta+2n\pi i)
+$$
+注意到，当$z$“退化”为实数时，其辐角
+\begin{align*}
+    \theta = 
+    \begin{cases}
+        2n\pi\quad x > 0\\
+        \pi+2n\pi \quad x\le 0
+    \end{cases}
+\end{align*}
+如果我们在实数域约定$\theta \in [0,2\pi)$，则复数域$\operatorname{Ln} z$
+\begin{align*}
+    \theta = 
+    \begin{cases}
+        0\quad x > 0\\
+        \pi \quad x\le 0
+    \end{cases}
+\end{align*}
+由于实数域中的指数函数恒大于0，则指数函数不可能包含$\theta=\pi$的分支，也就退化为了实数域的自然对数函数。换言之，复数域中指数函数的多值性的根本来源为
+将原定义域为实数域的对数函数拓展至复数域的过程中。同根式函数一样，复数域的对数函数与实数域的根式函数也存在根本差异。当$z$退化为实数时，对其使用复数域的指数函数，其结果也不等于
+实数域的对数函数。
+\section{复数与实数、复函数与实函数的区别}
+实数与复数、实数函数和复数函数的区别有许多。接下来我们分别讨论。
+\subsection{实数与复数的区别}
+实数与复数的最主要区别是，复数相比实数增加了一个基元(base) $i$，并且让其具备了所有实数都不具备的性质：
+$$
+i^2=-1
+$$
+通过两种基$1$与$i$的任意线性组合，可以表示任一复数和实数。
 \end{document}
