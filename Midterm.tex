@@ -44,7 +44,7 @@
 
 \section{泰勒展开与劳伦展开的区别}
 
-\subsection{泰勒级数和洛朗级数的定义}
+\subsection{泰勒级数和劳伦级数的定义}
 
 泰勒展开的定义:
 
@@ -78,7 +78,7 @@ $$
     R=\lim_{n\to \infty}\frac{1}{\sqrt[n]{|a_n|}}=\lim_{n\to \infty} \left| \frac{a_n}{a_{n+1}} \right| \;\; or \;\; R=|z_0-z_1| \;\; \text{$z_1$是离$z_0$最近的奇点}
 $$
 
-洛朗展开的定义：
+劳伦展开的定义：
 
 $\F$在以$z_0$为圆心的环域内解析，则对于该环域内任何一点$z$，有
 \begin{align*}
@@ -116,7 +116,7 @@ $\F$在以$z_0$为圆心的环域内解析，则对于该环域内任何一点$z
            & = \frac{1}{2\pi i}  \sum_{n=-\infty}^\infty \left[\ointctrclockwise \frac{\F[\xi]}{(\xi-z_0)^{n+1}}\D \xi \right](z-z_0)^n
     \end{align*}
 \end{proof}
-洛朗级数的收敛半径：
+劳伦级数的收敛半径：
 $$
     R_1<|z-z_0|<R_2,\quad R_1=\lim_{n\to -\infty} \left| \frac{a_{n-1}}{a_n} \right|\quad R_2=\lim_{n \to \infty} \left| \frac{a_n}{a_{n+1}} \right|
 $$
@@ -148,7 +148,7 @@ $$
 $$
 这也是为什么泰勒展开仅仅适用于在圆域内全解析的情况。
 
-而洛朗展开,通过构建合适的积分路径可以避免以上情况的发生，因此洛朗级数也可以适用于当$f(z)$在$z_0$处不解析的区域。例如：对于$f(z)=1/z$，通过将泰勒展开式
+而劳伦展开,通过构建合适的积分路径可以避免以上情况的发生，因此劳伦级数也可以适用于当$f(z)$在$z_0$处不解析的区域。例如：对于$f(z)=1/z$，通过将泰勒展开式
 $$
     f(z)=\sum_{n=0}^\infty a_n(z-0)^n=\sum_{n=0}^\infty a_n z^n
 $$
@@ -162,31 +162,31 @@ $$
 $$
 其中$C_1$是任一解析圆域内部可求长的包围住了$z_0$的闭合曲线。
 
-以及洛朗级数的系数表达式：
+以及劳伦级数的系数表达式：
 $$
     a_n=\frac{1}{2\pi i}\ointctrclockwise_{C_2} \frac{\F[\xi]}{(\xi-z_0)^{n+1}}\D \xi \;\;\; \text{For $-\infty \le n\le +\infty$}
 $$
 其中$C_2$是任一解析环域内部可求长的包围住了$z_0$的闭合曲线。
 
-不难发现，当函数$f(z)$仅仅拥有可去奇点时($\forall \; n < 0, \;a_n=0$)，其洛朗展开就是其泰勒展开。因为任一$C_2$，一定也是其$C_1$。同时，由于洛朗展开和泰勒展开的唯一性，
-我们可以部分使用泰勒展开帮助计算洛朗展开。
+不难发现，当函数$f(z)$仅仅拥有可去奇点时($\forall \; n < 0, \;a_n=0$)，其劳伦展开就是其泰勒展开。因为任一$C_2$，一定也是其$C_1$。同时，由于劳伦展开和泰勒展开的唯一性，
+我们可以部分使用泰勒展开帮助计算劳伦展开。
 \begin{example}
-    对$f(z)=\displaystyle \frac{1}{z(z-1)}\quad |z|>1$进行洛朗展开。
+    对$f(z)=\displaystyle \frac{1}{z(z-1)}\quad |z|>1$进行劳伦展开。
     \begin{align*}
         &f(1/z)=\frac{z^2}{1-z}=z^2 \sum_{n=0}^\infty z^n = \sum_{n=2}^\infty z^n \qquad |z|<1 \\
         &f(z)=\sum_{n=2}^\infty z^{-n}=\sum_{n=-2}^\infty z^n \qquad |z|>1
     \end{align*}
 \end{example}
 \subsection{特殊点的差异}
-一个函数如果以$z_0$为圆心的环域做洛朗展开，那么根据其洛朗展开的系数，$z_0$可以是$f(z)$的：
+一个函数如果以$z_0$为圆心的环域做劳伦展开，那么根据其劳伦展开的系数，$z_0$可以是$f(z)$的：
 \begin{enumerate}
     \item 可去奇点，如果其展开不含负数项且包含常数项。
     \item $m-$阶零点，如果其最小的正数数项是$m$阶的。
     \item $m-$阶极点，如果其最小的负数项是$-m$阶的。
     \item 本性奇点，如果其展开包含无穷负数项。
 \end{enumerate}
-当$f(z)$在整个圆域内解析时，其洛朗展开就是其泰勒展开。且由于其解析性质，$z_0$不可能是$f(z)$的极点和本性奇点。换言之，泰勒展开不可能
-拥有极点和本性奇点，只有可能拥有零点和可去奇点。而洛朗展开则可能拥有上述四种特殊点的的任一一种(不过显然$z_0$只会是四种特殊点中的其中一种)。
+当$f(z)$在整个圆域内解析时，其劳伦展开就是其泰勒展开。且由于其解析性质，$z_0$不可能是$f(z)$的极点和本性奇点。换言之，泰勒展开不可能
+拥有极点和本性奇点，只有可能拥有零点和可去奇点。而劳伦展开则可能拥有上述四种特殊点的的任一一种(不过显然$z_0$只会是四种特殊点中的其中一种)。
 
 不妨假设$b$是$\F$的$m-$阶极点，那么：
 $$
@@ -372,4 +372,119 @@ $$
 i^2=-1
 $$
 通过两种基$1$与$i$的任意线性组合，可以表示任一复数和实数。
+
+同时，不同于实数域可以排序，复数域是无法排序的。也就是说，不存在某种关系，我们定义为“$>$”、“$<$”以及“$=$”:
+设 $a, b, c \in \mathbb{C}$ 是复数，
+\begin{enumerate}
+    \item 对于$a$和$b$，要么$a > b$，要么$a < b$，要么$a = b$
+    \item 如果 $a < b$ ，那么 $a+c < b+c$ 。
+    \item 如果 $a < b$ 并且 $c>0$ ，那么 $a c < b c$ 。
+    \item 如果 $a < b$ 并且 $c<0$ ，那么 $a c > b c$ 。
+\end{enumerate}
+下面我们举一个反例：假设$i>0$，则由上条性质2，
+$$
+i\cdot i > i \cdot 0 \Leftrightarrow -1 > 0
+$$
+显然矛盾。若$i<0$，则由上条性质3，
+$$
+i \cdot i > 0 \cdot i \Leftrightarrow -1 >0
+$$
+显然矛盾，且显然$i\ne 0$。这说明如果引入了$i$，便无法再定义一个关系满足以上四种性质。
+\subsection{复变函数和实变函数的区别}
+一元实变函数与复变函数的最本质区别是，复变函数是某种特殊的“二元函数”，因为任一一个复数$z$都可以表示成：
+$$
+z=x+iy
+$$
+这样的形式。也即：
+$$
+\text{复函数}f: \mathbb{C} \rightarrow \mathbb{C}
+$$
+$$
+\text{一元实函数}f: \mathbb{R}^1 \rightarrow \mathbb{R}^1
+$$
+$$
+\text{二元实函数}f: \mathbb{R}^2 \rightarrow \mathbb{R}^2
+$$
+而因此，当我们在讨论复变函数的“可导”与“可微”时，这两个概念便不会像一元实变函数那样等价。但是，如果$f(z)$可以直接写成$z$的形式(而不是实部虚部分离的形式)，
+复变函数又表现出了一元实函数的部分特性，看上去像是一个一元函数。
+
+而能否认为复变函数是特殊的二元实变函数呢？考虑到二元函数连续的定义：
+
+\begin{equation*}
+    \lim _{\substack{x \rightarrow x_{0} \\ y \rightarrow y_{0}}} f(x, y)=A
+\end{equation*}
+
+
+注意到二元实函数连续要求以任何方向$(x,y)\to(x_0,y_0)$时其极限均存在且相等。复变函数$u(z)$可以写成
+$$
+u(z)=u(x,y)=v(z)+iw(z)=v(x,y)+iw(x,y) \quad x,y,v,w \in \mathbb{R}
+$$
+形式如上的复变函数的连续性等价为$u$和$w$均连续。也就是说，只要一个复变函数的实部和虚部分别连续，那么这个复变函数一定连续；反之，无法从二元实变函数中找到类似的两个部分，使得当这两个部分分别连续时，实变函数一定连续。
+
+考虑到二元实变函数的可微定义：
+$$
+z=f(x,y)\;\; \text{可微} \Leftrightarrow \D z = A \D x + B \D y
+$$
+而二元实变函数即使在$x$和$y$方向均可导，也不意味着其可微。例如：
+\begin{example}
+\begin{align*}
+f(x, y)=\begin{cases}\displaystyle
+\frac{x y}{ \sqrt{x^{2}+y^{2}}}\quad  (x, y) \neq(0,0) \\
+0 \quad (x, y)=(0,0)
+\end{cases} 
+\end{align*}
+\begin{equation*}
+    \lim _{x \rightarrow 0} \frac{f(x, 0)-f(0,0)}{x-0}=\lim _{x \rightarrow 0}\left(\frac{\displaystyle \frac{0}{|x|}-0}{x}\right)=0 \Rightarrow f_{x}^{\prime}(0,0)=0
+\end{equation*}
+同理，$f'_y(0,0)=0$。但是，其微分：
+\begin{equation*}
+    \begin{aligned}
+    &\Delta z=f(0+\Delta x, 0+\Delta y)-f(0,0)=\frac{\Delta x \cdot \Delta y}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}} \\
+    &\text { 直接带入 } \frac{x y}{\sqrt{x^{2}+y^{2}}} \text { 得到 } \\
+    &A=0, \quad B=0, \rho=\sqrt{(\Delta x)^{2}+(\Delta y)^{2}} \\
+    &\lim _{\rho \rightarrow 0} \frac{\Delta z}{\rho}=\lim _{\substack{\Delta x \rightarrow 0 \\
+    \Delta y \rightarrow 0}} \frac{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}=\lim _{\substack{\Delta x \rightarrow 0 \\
+    \Delta y \rightarrow 0}} \frac{\Delta x \cdot \Delta y}{(\Delta x)^{2}+(\Delta y)^{2}} \\
+    & \lim _{\Delta x \rightarrow 0} \frac{\Delta x \cdot \Delta y}{(\Delta x)^{2}+(\Delta y)^{2}}=\frac{1}{2} ; \lim _{\substack{x \rightarrow 00 \\
+    \Delta y=-\Delta x}} \frac{\Delta x \cdot \Delta y}{(\Delta x)^{2}+(\Delta y)^{2}}=-\frac{1}{2}
+    \end{aligned}
+\end{equation*}
+\end{example}
+说明$f(x,y)$的微分不存在。说明$f(x,y)$在$x$、$y$方向上的偏导不一定能完全表示其微分性质，即使保证了
+$$
+f_x(x,y)=f_y(x,y)
+$$
+也无法保证在沿着其他方向求得的偏导相等，进而也无法保证其导数存在。换言之，函数$f(x,y)$的偏导数存在，也不一定可微。仅仅当偏导数存在且连续时，其可微。
+
+而复变函数，似乎很少谈论其“偏导数”。复变函数$u(z)$写成
+$$
+u(z)=u(x,y)=v(z)+iw(z)=v(x,y)+iw(x,y) \quad x,y,v,w \in \mathbb{R}
+$$
+即使$u$的实部和虚部的偏导数均存在且连续，也无法认为其在区域内可微。还需要考虑Cauchy-Riemann条件：
+$$
+\left\{
+\begin{aligned}
+    \frac{\displaystyle \partial u(x,y)}{ \displaystyle \partial x}=\frac{\displaystyle \partial v(x,y)}{\displaystyle \partial y} \\
+    \frac{\displaystyle \partial v(x,y)}{ \displaystyle \partial x}=-\frac{\displaystyle \partial u(x,y)}{\displaystyle \partial y}
+\end{aligned}
+\right.
+$$
+
+除此之外，复变函数的“解析性”带来的一些性质也是复变函数所独有的。考虑二元实变函数所类似的性质“区域内可微”。一个解析函数所具有的零点是孤立的。而区域内可微的实变函数，其零点未必是孤立的。例如函数：
+\begin{equation*}
+    f(x)=\left\{\begin{array}{l}
+    x^{2} \sin \frac{1}{x}, x \neq 0 \\
+    0, x=0
+    \end{array}\right.
+\end{equation*}
+
+同时，由于复数可以表示成以下形式：
+$$
+z=re^{i\theta}
+$$
+所以复变函数还具有实变函数所不具备的柯西积分公式、留数定理等数学工具。
+
+不过，实变函数也具备一些复变函数所不具备的性质。例如Lagrange中值定理：
+比如设 $f(z)=z^{3}+1, z_{1}=\frac{-1+\sqrt{3} i}{2}, z_{2}=\frac{-1-\sqrt{3} i}{2}$, 则有 $f\left(z_{2}\right)-f\left(z_{1}\right)=0$, $z_{2}-z_{1}=-\sqrt{3} i$, 显然连接 $z_{1}$ 和 $z_{2}$ 
+的线段上的任意一点 $x$, 都不可能使得等式 $f\left(z_{2}\right)-f\left(z_{1}\right)=f^{\prime}(\xi)\left(z_{2}-z_{1}\right)$ 成立, 即 Lagrange 中值定理不成立.
 \end{document}

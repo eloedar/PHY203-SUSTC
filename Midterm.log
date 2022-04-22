@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2022.3.31)  21 APR 2022 14:06
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2022.3.31)  21 APR 2022 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -801,17 +801,17 @@ Overfull \hbox (5.84209pt too wide) in paragraph at lines 329--330
 [][] 
  []
 
-[8] [9] [10] (./Midterm.aux)
+[8] [9] [10] [11] [12] [13] [14] (./Midterm.aux)
 Package rerunfilecheck Info: File `Midterm.out' has not changed.
-(rerunfilecheck)             Checksum: B7859BE330C0F2703AC9493FDC961EE2;1385.
+(rerunfilecheck)             Checksum: E5B5B14C59BFFF0EE05A3F7C551023D8;1539.
  ) 
 Here is how much of TeX's memory you used:
- 36532 strings out of 476919
- 909580 string characters out of 5825424
+ 36604 strings out of 476919
+ 914396 string characters out of 5825424
  1365118 words of memory out of 5000000
- 55898 multiletter control sequences out of 15000+600000
- 419975 words of font info for 124 fonts, out of 8000000 for 9000
+ 55964 multiletter control sequences out of 15000+600000
+ 420007 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,14n,104p,724b,2255s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 102i,16n,104p,724b,2255s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Midterm.pdf (12 pages).
+Output written on Midterm.pdf (16 pages).
